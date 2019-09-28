@@ -9,8 +9,6 @@ phases:
     runtime-versions: 
       nodejs: 10
     commands:
-      - echo installing npm
-      - npm install
       - echo cooking maven new menus
       - mvn install
 artifacts:
