@@ -1,0 +1,11 @@
+.create {
+    margin: 4px;
+    padding-left: 40%;  
+}
+.tagButton {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin: 10px;
+    padding-left: 10px;
+}

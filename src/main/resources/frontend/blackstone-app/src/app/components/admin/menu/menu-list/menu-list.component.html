@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="text-center">Breakfast</h2>
+            <table mat-table [dataSource]="breakfastList" class="mat-elevation-z8" (click)="testFunc()">
+                <div class="container">
+                    <ng-container matColumnDef="title">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td style="cursor: pointer;" mat-cell *matCellDef="let menu"
+                            [routerLink]="['/menuById', menu.id]" routerLinkActive="router-link-active">
+                            {{menu.name}}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="price">
+                        <th mat-header-cell *matHeaderCellDef>Price</th>
+                        <td mat-cell *matCellDef="let menu">${{menu.price}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="createdOn">
+                        <th mat-header-cell *matHeaderCellDef>Created On</th>
+                        <td mat-cell *matCellDef="let menu">{{convertDate(menu.createdOn)}}</td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </div>
+            </table>
+            <div>
+                <h2 class="text-center">Lunch</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5 class="text-center">Salads</h5>
+                        <table mat-table [dataSource]="saladsList" class="mat-elevation-z8" (click)="testFunc()">
+                            <div class="container">
+                                <ng-container matColumnDef="title">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td style="cursor: pointer;" mat-cell *matCellDef="let menu"
+                                        [routerLink]="['/menuById', menu.id]" routerLinkActive="router-link-active">
+                                        {{menu.name}}
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="price">
+                                    <th mat-header-cell *matHeaderCellDef>Price</th>
+                                    <td mat-cell *matCellDef="let menu">${{menu.price}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="createdOn">
+                                    <th mat-header-cell *matHeaderCellDef>Created On</th>
+                                    <td mat-cell *matCellDef="let menu">{{convertDate(menu.createdOn)}}</td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                            </div>
+                        </table>
+                    </div>
+                    <div class="col-sm-12">
+                        <h5 class="text-center">Pasta</h5>
+                        <table mat-table [dataSource]="pastaList" class="mat-elevation-z8" (click)="testFunc()">
+                            <div class="container">
+                                <ng-container matColumnDef="title">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td style="cursor: pointer;" mat-cell *matCellDef="let menu"
+                                        [routerLink]="['/menuById', menu.id]" routerLinkActive="router-link-active">
+                                        {{menu.name}}
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="price">
+                                    <th mat-header-cell *matHeaderCellDef>Price</th>
+                                    <td mat-cell *matCellDef="let menu">${{menu.price}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="createdOn">
+                                    <th mat-header-cell *matHeaderCellDef>Created On</th>
+                                    <td mat-cell *matCellDef="let menu">{{convertDate(menu.createdOn)}}</td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                            </div>
+                        </table>
+                    </div>
+                    <div class="col-sm-12">
+                        <h5 class="text-center">Burgers</h5>
+                        <table mat-table [dataSource]="burgersList" class="mat-elevation-z8" (click)="testFunc()">
+                            <div class="container">
+                                <ng-container matColumnDef="title">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td style="cursor: pointer;" mat-cell *matCellDef="let menu"
+                                        [routerLink]="['/menuById', menu.id]" routerLinkActive="router-link-active">
+                                        {{menu.name}}
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="price">
+                                    <th mat-header-cell *matHeaderCellDef>Price</th>
+                                    <td mat-cell *matCellDef="let menu">${{menu.price}}</td>
+                                </ng-container>
+                                <ng-container matColumnDef="createdOn">
+                                    <th mat-header-cell *matHeaderCellDef>Created On</th>
+                                    <td mat-cell *matCellDef="let menu">{{convertDate(menu.createdOn)}}</td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <span><a mat-raised-button [routerLink]="['/add-menu']" class="mat-primary"
+                    routerLinkActive="router-link-active">Add
+                    Menu</a></span>
+        </div>
+    </div>
+</div>

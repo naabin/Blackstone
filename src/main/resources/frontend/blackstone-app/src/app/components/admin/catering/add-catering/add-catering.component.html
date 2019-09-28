@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div [hidden]="cateringAdded" class="col-sm-12">
+            <h3>New Menu Information<span>* is a required field</span></h3>
+            <form (submit)="onSubmit()" [formGroup]="cateringForm">
+                <mat-grid-list cols="4" rowHeight="60px">
+                    <mat-grid-tile [colspan]="4" [rowspan]="1">
+                        <mat-form-field  class="full-width">
+                            <mat-label>Category</mat-label>
+                            <mat-select formControlName="tag"  matNativeControl [(ngModel)]="tag.name" name="name" id="name">
+                                <mat-option  *ngFor="let tag of tags" [value]="tag.name">{{tag.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="4" rowHeight="60px">
+                    <mat-grid-tile [colspan]="4" [rowspan]="1">
+                        <mat-form-field class="full-width">
+                            <input formControlName="name" type="text" name="name" matInput id="name" [(ngModel)]="catering.name" required
+                                placeholder="Name of the item">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="4" rowHeight="60px">
+                    <mat-grid-tile [colspan]="4" [rowspan]="1">
+                        <mat-form-field class="full-width">
+                            <input formControlName="description" type="text" matInput id="description" name="descrition"
+                                [(ngModel)]="catering.description"  placeholder="Description...">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="4" rowHeight="60px">
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+                        <mat-form-field class="full-width">
+                            <input formControlName="minimumNo" type="number" matInput id="minimumNo" name="minimumNo"
+                                [(ngModel)]="catering.minimumNo" required placeholder="Minimun number...">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+                        <mat-form-field class="full-width">
+                            <input formControlName="pricePerPerson" type="number" matInput id="pricePerPerson" name="pricePerPerson"
+                                [(ngModel)]="catering.pricePerPerson" required placeholder="Price per person">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="2" rowHeight="60px">
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+                        <button [disabled]="!cateringForm.valid" matInput mat-raised-button class="mat-primary" type="submit">Add Catering</button>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
+                        <button matInput mat-raised-button class="mat-warn" [routerLink]="['/catering']">Cancel</button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </form>
+        </div>
+    </div>
+</div>

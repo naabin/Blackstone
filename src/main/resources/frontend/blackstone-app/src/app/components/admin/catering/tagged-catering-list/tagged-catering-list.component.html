@@ -1,0 +1,29 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="text-center">{{tagName}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 matCard">
+            <div *ngFor="let catering of cateringList">
+                <mat-card>
+                    <mat-card-title class="title">
+                        <h4>{{catering.name}}</h4>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <p>Minimum No: {{catering.minimumNo}}</p>
+                        <p>Price per Person: {{catering.pricePerPerson | currency}}</p>
+                        <p>Description: {{catering.description}}</p>
+                        <p>Category: {{catering.tags[0].name}}</p>
+                        <p>Created on: {{catering.createdOn |date}}</p>
+                    </mat-card-content>
+                    <mat-card-actions class="button-group">
+                        <button [routerLink]="['/add-catering', catering.id]" routerLinkActive="router-link-active"  mat-raised-button class="mat-primary">Edit</button>
+                        <button mat-raised-button class="delete">Delete</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

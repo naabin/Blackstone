@@ -1,0 +1,25 @@
+<div class="jumbotron header-jumbotron-display" style="height: 250px;">
+    <h1 class="text-center jumbotron-header" style="font-family: Poppins, sans-serif;color: rgb(246,247,248);">Our Menu
+    </h1>
+    <p></p>
+</div>
+<h1 class="text-center" style="color: rgb(215,8,8);font-family: Courgette, cursive;">Fan Favorite</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <h3 style="font-family: Poppins, sans-serif;">STARTERS<br></h3>
+                <div *ngFor="let menu of menuList" class="row">
+                    <div class="col-md-6">
+                        <p style="font-family: Poppins, sans-serif;">{{menu.name}}</p>
+                        <p class="food-description" style="font-family: Courgette, cursive;font-size: 13px;">
+                            {{menu.description}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-right" style="font-family: Poppins, sans-serif;">{{menu.price| currency}}<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

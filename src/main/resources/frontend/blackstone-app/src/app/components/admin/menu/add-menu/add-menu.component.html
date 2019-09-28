@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div [hidden]="menuAdded">
+                <h3>New Menu Information<span>* is a required field</span></h3>
+                <form [formGroup]="menuForm" (submit)="onSubmit()">
+                    <mat-grid-list cols="4" rowHeight="60px">
+                        <mat-grid-tile [colspan]="4" [rowspan]="1">
+                            <mat-form-field class="full-width">
+                                <input formControlName="name" type="text" matInput id="name" name="name" [(ngModel)]="menu.name" required
+                                    placeholder="Name of the Menu">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-grid-list cols="4" rowHeight="60px">
+                        <mat-grid-tile [colspan]="4" [rowspan]="1">
+                            <mat-form-field class="full-width">
+                                <input formControlName="description" type="text" matInput id="description" name="description"
+                                    [(ngModel)]="menu.description" required placeholder="Description...">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-grid-list cols="4" rowHeight="60px">
+                        <mat-grid-tile [colspan]="2" [rowspan]="1">
+                            <mat-form-field class="full-width">
+                                <input formControlName="price" matInput type="number" required id="price" name="price" [(ngModel)]="menu.price"
+                                    placeholder="Price">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-grid-list cols="4" rowHeight="60px">
+                        <mat-grid-tile [colspan]="2" [rowspan]="1">
+                            <mat-form-field class="full-width">
+                                <input formControlName="addExtra" type="text" matInput id="addExtra" name="addExtra" [(ngModel)]="menu.addExtra"
+                                    placeholder="Add Extra">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2" [rowspan]="1">
+                            <mat-form-field class="full-width">
+                                <input formControlName="addedPrice" type="number" matInput id="addedPrice" name="addedPrice"
+                                    [(ngModel)]="menu.addedPrice" placeholder="Added price">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-grid-list cols="4" rowHeight="80px">
+                        <mat-grid-tile [colspan]="1" [rowspan]="1">
+                            <mat-checkbox formControlName="control" required  [checked]="menu.burger"
+                                [(ngModel)]="menu.burger">Menu is Burger</mat-checkbox>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="1" [rowspan]="1">
+                            <mat-checkbox formControlName="control" required  [checked]="menu.breakFast" 
+                                [(ngModel)]="menu.breakFast">Menu is BreakFast</mat-checkbox>
+                            <!-- </mat-form-field> -->
+                        </mat-grid-tile>
+                        <mat-grid-tile  [colspan]="1" [rowspan]="1">
+                            <mat-checkbox formControlName="control"  [checked]="menu.pasta" 
+                                [(ngModel)]="menu.pasta">Menu is Pasta</mat-checkbox>
+                        </mat-grid-tile>
+                        <mat-grid-tile  [colspan]="1" [rowspan]="1">
+                            <mat-checkbox formControlName="control" required [checked]="menu.salad" 
+                                [(ngModel)]="menu.salad">Menu is Salad</mat-checkbox>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-grid-list cols="2" rowHeight="60px">
+                        <mat-grid-tile [colspan]="2" [rowspan]="1">
+                            <button [disabled]="!menuForm.valid" matInput mat-raised-button class="mat-primary" type="submit">Add Menu</button>
+                        </mat-grid-tile>
+                        <mat-grid-tile [colspan]="2" [rowspan]="1">
+                            <button matInput mat-raised-button class="mat-warn" [routerLink]="['/menu']">Cancel</button>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,200 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.box {
+  border: 1px solid black;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  color: #333;
+  background-color: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: midnightblue;
+}
+
+mat-input-container {
+  width: 100%;
+}
+
+mat-select {
+  width: 100%;
+}
+
+mat-slide-toggle {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.primary {
+  color: white;
+}
+
+
+div.jumbotron.hero-food {
+  color: #fff;
+  text-align: center;
+  background: none;
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 1900px;
+  height: 925px;
+}
+
+h1.hero-title,
+h2.hero-title,
+h3.hero-title {
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding-top: 312px;
+}
+
+.home-grid-heading {
+  padding-top: 40px;
+}
+
+
+
+.container.home-section-1 {
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.home-feature-block {
+  padding-top: 30px;
+}
+
+.text-center.parallax-heading {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.parallax-main {
+  padding-top: 200px;
+  margin-top: 15px;
+}
+
+.rounded.img-fluid.feature-imge {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 70%;
+  height: 60%;
+}
+
+.rounded.img-fluid.home-feature-imge {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 70%;
+  height: 60%;
+}
+
+.home-feature-block {
+  margin-top: 50px;
+}
+
+.text-center.menu-heading-1 {
+  padding-top: 170px;
+}
+
+.text-center.border.rounded-0.border-secondary.parallax-heading {
+  font-weight: bold;
+}
+
+.btn.btn-primary.our-menu-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /*background-color: #ee0c1a;*/
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.rounded.img-fluid.our-menu-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container.our-menu-container {
+  padding-top: 70px;
+}
+
+.text-center.call-to-action-booking {
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.review-feedback {
+  margin-top: 80px;
+}
+
+.text-center.home-modal-button-reservation {
+  padding-bottom: 30px;
+}
+
+.special-of-day-modal-title {
+  font-family: 'Poppins';
+}
+
+.special-of-day-modal-body {
+  padding-left: 10px;
+}
+
+/* .special-of-day-modal-content {
+} */
+
+.text-center.jumbotron-header {
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.jumbotron.header-jumbotron-display {
+  background-image: none;
+  background-position: center center;
+  background-size: cover;
+}
+
+.row.booking-form {
+  margin-bottom: 30px;
+  border-color: red;
+  margin-top: 30px;
+}
+
+.food-desccription {
+  margin-top: -20px;
+}
+
+.text-center.menu-paraalax-heading {
+  padding-top: 50px;
+  font-weight: bold;
+}

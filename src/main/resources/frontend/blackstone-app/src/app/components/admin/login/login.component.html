@@ -1,0 +1,38 @@
+<div class="container">
+    <div [hidden]="!error" class=" col-sm-12 alert alert-danger">
+        Invalid credentials
+    </div>
+    <div [hidden]="isLoggedIn">
+        <mat-grid-list rowHeight="200" [cols]="6" [style.margin-top]="'150px'">
+            <mat-grid-tile [colspan]="1">
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4">
+                <form [formGroup]="loginForm" (submit)="onSubmit()">
+                    <mat-form-field class="full-width">
+                        <input formControlName="name" matInput type="text" name="username" placeholder="Your Username"
+                            [(ngModel)]="credentials.username" id="username">
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" name="username"
+                            placeholder="Your Password" [(ngModel)]="credentials.password" id="password">
+                        <button type="button" mat-icon-button matSuffix (click)="hidden()"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <div>
+                        <button [disabled]="!loginForm.valid" matInput mat-raised-button type="submit"
+                            class="mat-primary">Login</button>
+                    </div>
+
+                </form>
+            </mat-grid-tile>
+        </mat-grid-list>
+            <div [hidden]="!success" class=" col-sm-12 alert alert-success">
+                Logged in Successfully
+    </div>
+    </div>
+    <div [ngStyle]="{textAlign: center}" [hidden]="!isLoggedIn">
+        <h1>Welcome to Blackstone</h1>
+    </div>
+</div>

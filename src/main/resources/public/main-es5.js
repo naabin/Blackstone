@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-nav-bar></app-nav-bar>\n<router-outlet></router-outlet>\n"
+module.exports = "\n<app-nav-bar></app-nav-bar>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -206,7 +206,7 @@ module.exports = "<div id=\"fw_al_007\" class=\"carousel ps_rotate_scale_c ps_in
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer>\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4 footer-navigation\">\n            <h3><a href=\"#\"><span><img class=\"footer-icon\" src=\"../../../../assets/blackstoneicon2.png\"></span></a></h3>\n            <p class=\"links\">\n                <a href=\"#\">Contact</a>\n                <a [routerLink]=\"['/login']\" routerLinkActive=\"router-link-active\" >Admin login</a>\n            </p>\n            <p class=\"company-name\">Blackstone © 2019</p>\n        </div>\n        <div class=\"col-sm-6 col-md-4 footer-contacts\">\n            <div><span class=\"fa fa-map-marker footer-contacts-icon\"> </span>\n                <p><span class=\"new-line-span\">CnrJerrabomberra Ave & Hindmarsh Dr</span>Symonston, ACT, Australia</p>\n            </div>\n            <div><i class=\"fa fa-phone footer-contacts-icon\"></i>\n                <p class=\"footer-center-info email text-left\"> +61 1234 123456</p>\n            </div>\n            <div><i class=\"fa fa-envelope footer-contacts-icon\"></i>\n                <p> <a href=\"#\" target=\"_blank\">support@company.com</a></p>\n            </div>\n        </div>\n        <div class=\"clearfix\"></div>\n        <div class=\"col-md-4 footer-about\">\n            <h4>About the company</h4>\n            <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus\n                vehicula sit amet. </p>\n            <div class=\"social-links social-icons\">\n                <a href=\"#\"><i class=\"fa fa-facebook\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-twitter\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>\n            </div>\n        </div>\n    </div>\n</footer>"
+module.exports = "<footer>\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4 footer-navigation\">\n            <h3><a href=\"#\"><span><img class=\"footer-icon\" src=\"../../../../assets/blackstoneicon2.png\"></span></a></h3>\n            <p class=\"links\">\n                <a href=\"#\">Contact</a>\n            </p>\n            <p class=\"company-name\">Blackstone © 2019</p>\n        </div>\n        <div class=\"col-sm-6 col-md-4 footer-contacts\">\n            <div><span class=\"fa fa-map-marker footer-contacts-icon\"> </span>\n                <p><span class=\"new-line-span\">CnrJerrabomberra Ave & Hindmarsh Dr</span>Symonston, ACT, Australia</p>\n            </div>\n            <div><i class=\"fa fa-phone footer-contacts-icon\"></i>\n                <p class=\"footer-center-info email text-left\"> +61 1234 123456</p>\n            </div>\n            <div><i class=\"fa fa-envelope footer-contacts-icon\"></i>\n                <p> <a href=\"#\" target=\"_blank\">support@company.com</a></p>\n            </div>\n        </div>\n        <div class=\"clearfix\"></div>\n        <div class=\"col-md-4 footer-about\">\n            <h4>About the company</h4>\n            <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus\n                vehicula sit amet. </p>\n            <div class=\"social-links social-icons\">\n                <a href=\"#\"><i class=\"fa fa-facebook\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-twitter\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>\n            </div>\n        </div>\n    </div>\n</footer>"
 
 /***/ }),
 
@@ -1188,16 +1188,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_service_login_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/service/login.service */ "./src/app/service/login.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
 
 
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(loginService, router) {
+    function LoginComponent(loginService) {
         this.loginService = loginService;
-        this.router = router;
         this.credentials = { username: '', password: '' };
         this.isLoggedIn = false;
         this.hide = true;
@@ -1216,7 +1213,7 @@ var LoginComponent = /** @class */ (function () {
             sessionStorage.setItem('token', res.json().token);
             _this.isLoggedIn = true;
             _this.success = true;
-            _this.router.navigate(['/menu']);
+            location.reload();
         }, function (error) {
             _this.isLoggedIn = false;
             _this.error = true;
@@ -1235,8 +1232,7 @@ var LoginComponent = /** @class */ (function () {
         }
     };
     LoginComponent.ctorParameters = function () { return [
-        { type: src_app_service_login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+        { type: src_app_service_login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"] }
     ]; };
     LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2066,7 +2062,7 @@ var AddMenuService = /** @class */ (function () {
         });
     }
     AddMenuService.prototype.addMenu = function (menu) {
-        this.headers.append('Authorization', 'Bearer' + sessionStorage.getItem('token'));
+        this.headers.append('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
         console.log(this.headers);
         return this.http.post(this.url, JSON.stringify(menu), { headers: this.headers });
     };
@@ -2418,7 +2414,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RemoteURL", function() { return RemoteURL; });
 var RemoteURL = /** @class */ (function () {
     function RemoteURL() {
-        this.url = '';
+        this.url = 'http://localhost:8080';
     }
     return RemoteURL;
 }());
@@ -2441,7 +2437,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: true
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -2538,7 +2534,7 @@ var Menu = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/nabin/Desktop/Blackstone/blackstone-cafe/src/main/resources/frontend/blackstone-app/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/nabin/Desktop/NewBlackStoneProject/blackstone-cafe/src/main/resources/frontend/blackstone-app/src/main.ts */"./src/main.ts");
 
 
 /***/ })

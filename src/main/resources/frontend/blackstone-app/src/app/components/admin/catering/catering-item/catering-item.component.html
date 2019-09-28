@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>Category Information</h3>
+                </div>
+                <div *ngIf="catering ? catering: null" class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let tag of tags">Category: {{tag.name}}</li>
+                        <li class="list-group-item">Name: {{catering.name}}</li>
+                        <li class="list-group-item">Description: {{catering.description}}</li>
+                        <li class="list-group-item">Price per Person: ${{catering.pricePerPerson}}</li>
+                        <li class="list-group-item">Created on: {{catering.createdOn | date}}</li>
+                    </ul>
+                    <div class="btn-group justify">
+                        <button type="button" class="btn btn-primary" 
+                                mat-raised-button [routerLink]="['/add-catering', cateringId]" 
+                                routerLinkActive="router-link-active">Edit Menu</button>
+                        <button type="button" (click)="onDelete(catering.id)" mat-raised-button class="btn btn-danger">
+                            Delete Menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

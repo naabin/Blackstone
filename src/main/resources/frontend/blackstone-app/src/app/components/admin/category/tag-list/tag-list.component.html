@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12  create">
+            <button mat-raised-button [routerLink]="['/add-category']" routerLinkActive="router-link-active"  class="mat-primary">Create New Category</button>
+        </div>
+        <div *ngFor="let tag of tagList" class="col-sm-12">
+            <button [matMenuTriggerFor]="belowMenu" class="tagButton" mat-raised-button
+                matToolTip="click here to see the menu">{{tag.name}}</button>
+            <mat-menu #belowMenu yPosition="below">
+                <button mat-menu-item [routerLink]="['/catering/tagName', tag.name]" routerLinkActive="router-link-active" >Show menu with this Category</button>
+                <button mat-menu-item [routerLink]="['/add-category', tag.id]" routerLinkActive="router-link-active" >Edit tag</button>
+                <button mat-menu-item>Delete Category</button>
+            </mat-menu>
+        </div>
+    </div>
+</div>

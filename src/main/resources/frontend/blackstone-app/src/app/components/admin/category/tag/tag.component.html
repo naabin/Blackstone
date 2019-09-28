@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+
+        <div style="margin-top: 20px;"  class="col-sm-12">
+            <form (submit)="onSubmit()">
+                <mat-form-field class="full-width">
+                    <input matInput type="text" id="name" name="name" [(ngModel)]="tag.name"
+                        placeholder="Enter a category name">
+                </mat-form-field>
+                <div>
+                    <button matInput mat-raised-button type="submit" class="mat-primary">{{tagId ? "Update" : "Create"}}</button>
+                    <button [routerLink]="['/category-list']" routerLinkActive="router-link-active"  matInput mat-raised-button type="button" class="mat-primary"  style="margin-left: 5px;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

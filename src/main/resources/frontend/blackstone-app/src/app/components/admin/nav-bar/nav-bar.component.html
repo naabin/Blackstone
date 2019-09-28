@@ -1,0 +1,43 @@
+<mat-toolbar [hidden]="!isLoggedIn" color="primary">
+        <h3 class="example-spacer" [ngStyle]="{color: white}">Blackstone
+        </h3>
+        <span class="example-spacer"></span>
+        <span [hidden]="!isLoggedIn" [routerLink]="['/image']" routerLinkActive="router-link-active"><a
+                        mat-button>Gallery</a></span>
+        <span [hidden]="!isLoggedIn" [routerLink]="['/menu']" routerLinkActive="router-link-active"><a
+                        mat-button>Menu</a></span>
+        <span [hidden]="!isLoggedIn" [routerLink]="['/category-list']" routerLinkActive="router-link-active"><a
+                        mat-button>Category</a></span>
+        <span [hidden]="!isLoggedIn"><a mat-button [routerLink]="['/catering']"
+                        routerLinkActive="router-link-active">Catering</a></span>
+        <span [hidden]="!isLoggedIn"><a mat-button (click)="logout()">Logout</a></span>
+</mat-toolbar>
+<nav [hidden]="isLoggedIn" class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="row">
+                <a class="navbar-brand" href="#" style="font-family: Poppins, sans-serif;font-size: 30px;">Blackstone Cafe</a>
+                <button data-toggle="collapse" class="navbar-toggler collapsed" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navcol-1">
+                        <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item" role="presentation">
+                                        <a class="nav-link" style="font-size: 20px;" href="#">About</a>
+                                </li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size: 20px;">Reservation</a></li>
+                                <li class="nav-item" role="presentation">
+                                        <a class="nav-link" href="#" style="font-size: 20px;">Contact us</a>
+                                </li>
+                                <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size: 20px;">More</a>
+                                <div class="dropdown-menu" role="menu">
+                                        <a class="dropdown-item" role="presentation" [routerLink]="['/our-menu']" routerLinkActive="router-link-active" >Our Menu</a>
+                                        <a class="dropdown-item" role="presentation" href="#">Gallery</a>
+                                        <a class="dropdown-item" role="presentation" href="events.html">Events</a>
+                                </div>
+                                </li>
+                        </ul>
+                </div>
+        </div>
+
+</nav>
+

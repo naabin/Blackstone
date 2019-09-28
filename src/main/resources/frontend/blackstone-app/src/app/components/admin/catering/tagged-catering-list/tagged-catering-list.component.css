@@ -1,0 +1,18 @@
+.mat-card {
+    /* display: block; */
+    /* position: relative; */
+    /* padding: 16px;   */
+    margin: 10px;
+}
+
+.matCard{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap:wrap; */
+    padding: 20px;
+    min-width:fit-content;
+}
+.title {
+    min-width: 300px;
+}
+

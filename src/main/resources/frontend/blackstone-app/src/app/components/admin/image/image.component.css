@@ -1,0 +1,18 @@
+.card-image{
+    display: block;
+    position: relative;
+    justify-content: center;
+    /* padding: 20px; */
+    width: 100%;
+}
+
+.image-card{
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+
+}
+
