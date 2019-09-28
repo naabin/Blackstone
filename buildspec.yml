@@ -6,9 +6,12 @@ env:
     
 phases:
   install:
+    runtime-versions: 
+      nodejs: 10
     commands:
       - echo cooking new blackstone menus
       - mvn install
+      - npm install
 artifacts:
   files:
     - target/*.jar
