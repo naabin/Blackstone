@@ -11,6 +11,9 @@ phases:
     commands:
       - echo cooking maven new menus
       - mvn install
+  build: 
+    commands:
+      - mvn package
 artifacts:
   files:
     - target/*.jar
