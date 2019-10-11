@@ -8,7 +8,10 @@ phases:
   build: 
     commands:
       - pwd
-      - pushd src/main/resources/frontend/blackstone-app && npm install && popd
+      - pushd src/main/resources/frontend/blackstone-app 
+      - npm install
+      - npm install -g @angular/cli
+      - popd
       - mvn install
       - mvn clean package
 artifacts:
