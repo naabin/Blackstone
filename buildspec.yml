@@ -7,6 +7,8 @@ phases:
       - echo installing maven
   build: 
     commands:
+      - pwd
+      - pushd src/main/resources/frontend/blackstone-app && npm install && popd
       - mvn install
       - mvn clean package
 artifacts:
