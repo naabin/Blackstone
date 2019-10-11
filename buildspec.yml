@@ -10,11 +10,10 @@ phases:
       nodejs: 10
     commands:
       - echo installing maven
-      - apt-get update -y
-      - apt-get install -y maven
   build: 
     commands:
       - mvn install
+      - mvn clean package
 artifacts:
   files:
     - target/*.jar
