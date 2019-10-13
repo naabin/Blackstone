@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Menu } from 'src/models/menu';
-import { RemoteURL } from '../shared/url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddMenuService {
-  private url = new RemoteURL().url + '/menu';
+  private url = '/api/menu';
 
   // tslint:disable-next-line: deprecation
   private headers = new Headers({
@@ -18,7 +17,6 @@ export class AddMenuService {
 
   addMenu(menu: Menu) {
     this.headers.append('Authorization',  'Bearer ' + sessionStorage.getItem('token'));
-    console.log(this.headers);
     return this.http.post(this.url, JSON.stringify(menu), { headers: this.headers });
   }
 }
@@ -27,7 +25,7 @@ export class AddMenuService {
 })
 export class GetMenuListService {
 
-  private url = new RemoteURL().url + '/menu';
+  private url =  '/api/menu';
 
   // tslint:disable-next-line: deprecation
   private headers = new Headers({

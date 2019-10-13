@@ -19,7 +19,7 @@ import com.blackstone.spring.model.Drinks;
 import com.blackstone.spring.service.GeneralService;
 
 @RestController
-@RequestMapping("/drinks")
+@RequestMapping("/api/drinks")
 public class DrinksController {
 	
 	@Autowired

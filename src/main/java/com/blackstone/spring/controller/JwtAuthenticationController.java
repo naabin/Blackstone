@@ -26,6 +26,7 @@ import com.blackstone.spring.service.UsersService;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/api")
 public class JwtAuthenticationController {
 
 	@Autowired

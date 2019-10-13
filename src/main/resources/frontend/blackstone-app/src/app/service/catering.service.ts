@@ -7,7 +7,7 @@ import { Catering } from 'src/models/catering';
 })
 export class CateringService {
 
-  private url = 'http://localhost:8080/catering';
+  private url = '/api/catering';
   // tslint:disable-next-line: deprecation
   private headers = new Headers({
     'Content-Type': 'application/json',

@@ -19,7 +19,7 @@ import com.blackstone.spring.model.Menu;
 import com.blackstone.spring.service.GeneralService;
 
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/api/menu")
 public class MenuController {
 	
 	@Autowired

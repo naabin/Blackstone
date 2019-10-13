@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Tag } from 'src/models/catering';
+import { RemoteURL } from '../shared/url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
-  private url = 'http://localhost:8080/tag';
+  private url = new RemoteURL().url + '/tag';
   // tslint:disable-next-line: deprecation
   private headers = new Headers({
     'Content-Type': 'application/json',

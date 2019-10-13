@@ -5,7 +5,7 @@ import { Http, Headers } from '@angular/http';
   providedIn: 'root'
 })
 export class ImageService {
-  private url = 'http://localhost:8080/images';
+  private url = '/api/images';
 
   // tslint:disable-next-line: deprecation
   private headers = new Headers({});

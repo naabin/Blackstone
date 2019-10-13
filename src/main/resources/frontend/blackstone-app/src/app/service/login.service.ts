@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { RemoteURL } from '../shared/url';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,7 @@ import { RemoteURL } from '../shared/url';
 export class LoginService {
 
 
-  private baseUrl = new RemoteURL().url;
+  private baseUrl = '/api';
 
   // tslint:disable-next-line: deprecation
   private headers = new Headers({

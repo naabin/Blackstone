@@ -23,7 +23,7 @@ import com.blackstone.spring.service.GeneralService;
 
 
 @RestController
-@RequestMapping("/catering")
+@RequestMapping("/api/catering")
 public class CateringController {
 	
 	@Autowired

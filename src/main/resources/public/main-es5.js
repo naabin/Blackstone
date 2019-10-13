@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<app-nav-bar></app-nav-bar>\n<router-outlet></router-outlet>\n"
+module.exports = "<app-nav-bar></app-nav-bar>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -107,7 +107,7 @@ module.exports = "<div class=\"container \">\n    <div class=\"row\">\n        <
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-sm-12 col-md-8\">\n            <form (submit)=\"processFile(imageInput, $event)\" [formGroup]=\"imageForm\">\n                <div [hidden]=\"loading\" class=\"col-sm-12 \">\n                    <div class=\"input-group mb-3\">\n                        <label>Image Name:</label>\n                        <input formControlName=\"name\" class=\"form-control\" (keyup)=\"getName($event)\" type=\"text\">\n                    </div>\n\n                    <div class=\"btn btn-primary col-sm-12\">\n                        <span>Choose Image</span>\n                        <input formControlName=\"image\" class=\"form-control\" #imageInput accept=\".png, .jpg, .jpeg\"\n                            type=\"file\">\n                    </div>\n\n                    <div class=\"button-group\">\n                        <button [disabled]=\"!imageForm.valid\" class=\"btn btn-primary\" type=\"submit\">Upload</button>\n                    </div>\n                </div>\n                <div [hidden]=\"!loading\" class=\"col-sm-12 justify-content-center\">\n                    <button class=\"btn btn-primary\" type=\"button\" disabled>\n                        <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only\">Loading...</span>\n                    </button>\n                </div>\n            </form>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div *ngFor=\"let image of images\" class=\"col-sm-12 col-md-4\">\n            <mat-card class=\"image-card\">\n                <mat-card-title class=\"text-center\">{{image.name}}</mat-card-title>\n                <mat-card-content>\n                    <img class=\"img-fluid rounded mx-auto d-block\" mat-card-sm-image src=\"{{image.imageUrl}}\">\n                </mat-card-content>\n                <mat-card-actions>\n                    <button [hidden]=\"loading\" (click)=\"deleteImage(image.id)\" mat-raised-button\n                        class=\"mat-warn deleteButton\">Delete</button>\n                    <button [hidden] =\"!loading\" class=\"btn btn-primary\" type=\"button\" disabled>\n                        <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only\">Loading...</span>\n                    </button>\n                </mat-card-actions>\n            </mat-card>\n        </div>\n    </div>\n</div>\n\n"
+module.exports = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-sm-12 col-md-8\">\n            <form (submit)=\"processFile(imageInput, $event)\" [formGroup]=\"imageForm\">\n                <div [hidden]=\"loading\" class=\"col-sm-12 \">\n                    <div class=\"input-group mb-3\">\n                        <label>Image Name:</label>\n                        <input formControlName=\"name\" class=\"form-control\" (keyup)=\"getName($event)\" type=\"text\">\n                    </div>\n\n                    <div class=\"btn btn-primary col-sm-12\">\n                        <span>Choose Image</span>\n                        <input formControlName=\"image\" class=\"form-control\" #imageInput accept=\".png, .jpg, .jpeg\"\n                            type=\"file\">\n                    </div>\n\n                    <div class=\"button-group\">\n                        <button [disabled]=\"!imageForm.valid\" class=\"btn btn-primary\" type=\"submit\">Upload</button>\n                    </div>\n                </div>\n                <div [hidden]=\"!loading\" class=\"col-sm-12 justify-content-center\">\n                    <button class=\"btn btn-primary\" type=\"button\" disabled>\n                        <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only\">Loading...</span>\n                    </button>\n                </div>\n            </form>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div *ngFor=\"let image of images\" class=\"col-sm-12 col-md-4\">\n            <mat-card class=\"image-card\">\n                <mat-card-title class=\"text-center\">{{image.name}}</mat-card-title>\n                <mat-card-content>\n                    <img class=\"img-fluid rounded mx-auto d-block\" mat-card-sm-image src=\"{{image.imageUrl}}\">\n                </mat-card-content>\n                <mat-card-actions>\n                    <button [hidden]=\"loading\" (click)=\"deleteImage(image.id)\" mat-raised-button\n                        class=\"mat-warn deleteButton\">Delete</button>\n                    <button [hidden] =\"!deleteLoading \" class=\"btn btn-primary\" type=\"button\" disabled>\n                        <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>\n                        <span class=\"sr-only\">Loading...</span>\n                    </button>\n                </mat-card-actions>\n            </mat-card>\n        </div>\n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -162,7 +162,7 @@ module.exports = "<div class=\"container\">\n    <div class=\"row\">\n        <d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar [hidden]=\"!isLoggedIn\" color=\"primary\">\n        <h3 class=\"example-spacer\" [ngStyle]=\"{color: white}\">Blackstone\n        </h3>\n        <span class=\"example-spacer\"></span>\n        <span [hidden]=\"!isLoggedIn\" [routerLink]=\"['/image']\" routerLinkActive=\"router-link-active\"><a\n                        mat-button>Gallery</a></span>\n        <span [hidden]=\"!isLoggedIn\" [routerLink]=\"['/menu']\" routerLinkActive=\"router-link-active\"><a\n                        mat-button>Menu</a></span>\n        <span [hidden]=\"!isLoggedIn\" [routerLink]=\"['/category-list']\" routerLinkActive=\"router-link-active\"><a\n                        mat-button>Category</a></span>\n        <span [hidden]=\"!isLoggedIn\"><a mat-button [routerLink]=\"['/catering']\"\n                        routerLinkActive=\"router-link-active\">Catering</a></span>\n        <span [hidden]=\"!isLoggedIn\"><a mat-button (click)=\"logout()\">Logout</a></span>\n</mat-toolbar>\n<nav [hidden]=\"isLoggedIn\" class=\"navbar navbar-light navbar-expand-md navigation-clean\">\n        <div class=\"row\">\n                <a class=\"navbar-brand\" href=\"#\" style=\"font-family: Poppins, sans-serif;font-size: 30px;\">Blackstone Cafe</a>\n                <button data-toggle=\"collapse\" class=\"navbar-toggler collapsed\" data-target=\"#navcol-1\">\n                        <span class=\"sr-only\">Toggle navigation</span>\n                        <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"navbar-collapse collapse\" id=\"navcol-1\">\n                        <ul class=\"nav navbar-nav ml-auto\">\n                                <li class=\"nav-item\" role=\"presentation\">\n                                        <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"#\">About</a>\n                                </li>\n                                <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link\" href=\"#\" style=\"font-size: 20px;\">Reservation</a></li>\n                                <li class=\"nav-item\" role=\"presentation\">\n                                        <a class=\"nav-link\" href=\"#\" style=\"font-size: 20px;\">Contact us</a>\n                                </li>\n                                <li class=\"dropdown nav-item\"><a class=\"dropdown-toggle nav-link\" data-toggle=\"dropdown\" aria-expanded=\"false\" href=\"#\" style=\"font-size: 20px;\">More</a>\n                                <div class=\"dropdown-menu\" role=\"menu\">\n                                        <a class=\"dropdown-item\" role=\"presentation\" [routerLink]=\"['/our-menu']\" routerLinkActive=\"router-link-active\" >Our Menu</a>\n                                        <a class=\"dropdown-item\" role=\"presentation\" href=\"#\">Gallery</a>\n                                        <a class=\"dropdown-item\" role=\"presentation\" href=\"events.html\">Events</a>\n                                </div>\n                                </li>\n                        </ul>\n                </div>\n        </div>\n\n</nav>\n\n"
+module.exports = "<mat-toolbar [hidden]=\"!isLoggedIn\" color=\"primary\">\n        <h3 [ngStyle]=\"{color: white}\">Blackstone</h3>\n        <span class=\"example-spacer\"></span>\n        <span [hidden]=\"!isLoggedIn\" [routerLink]=\"['/image']\" routerLinkActive=\"router-link-active\"><a\n                        mat-button>Gallery</a></span>\n        <span [hidden]=\"!isLoggedIn\" [routerLink]=\"['/menu']\" routerLinkActive=\"router-link-active\"><a\n                        mat-button>Menu</a></span>\n        <span [hidden]=\"!isLoggedIn\" [routerLink]=\"['/category-list']\" routerLinkActive=\"router-link-active\"><a\n                        mat-button>Category</a></span>\n        <span [hidden]=\"!isLoggedIn\"><a mat-button [routerLink]=\"['/catering']\"\n                        routerLinkActive=\"router-link-active\">Catering</a></span>\n        <span [hidden]=\"!isLoggedIn\"><a mat-button (click)=\"logout()\">Logout</a></span>\n</mat-toolbar>\n<nav [hidden]=\"isLoggedIn\" class=\"navbar navbar-light navbar-expand-md navigation-clean\">\n        <div class=\"row full-width blacstone-nav\">\n                <a class=\"navbar-brand\" href=\"#\" style=\"font-family: Poppins, sans-serif;font-size: 30px;\">Blackstone\n                        Cafe</a>\n                <button data-toggle=\"collapse\" class=\"navbar-toggler collapsed\" data-target=\"#navcol-1\">\n                        <span class=\"sr-only\">Toggle navigation</span>\n                        <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div>\n                        <div class=\"navbar-collapse collapse\" id=\"navcol-1\">\n                                <ul class=\"nav navbar-nav ml-auto\">\n                                        <li class=\"nav-item\" role=\"presentation\">\n                                                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"#\">About</a>\n                                        </li>\n                                        <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link\" href=\"#\"\n                                                        style=\"font-size: 20px;\">Reservation</a></li>\n                                        <li class=\"nav-item\" role=\"presentation\">\n                                                <a class=\"nav-link\" href=\"#\" style=\"font-size: 20px;\">Contact us</a>\n                                        </li>\n                                        <li class=\"dropdown nav-item\"><a class=\"dropdown-toggle nav-link\"\n                                                        data-toggle=\"dropdown\" aria-expanded=\"false\" href=\"#\"\n                                                        style=\"font-size: 20px;\">More</a>\n                                                <div class=\"dropdown-menu\" role=\"menu\">\n                                                        <a class=\"dropdown-item\" role=\"presentation\"\n                                                                [routerLink]=\"['/our-menu']\"\n                                                                routerLinkActive=\"router-link-active\">Our Menu</a>\n                                                        <a class=\"dropdown-item\" role=\"presentation\" [routerLink]=\"['/gallery']\" routerLinkActive=\"router-link-active\" >Gallery</a>\n                                                        <a class=\"dropdown-item\" role=\"presentation\"\n                                                                href=\"events.html\">Events</a>\n                                                </div>\n                                        </li>\n                                </ul>\n                        </div>\n                </div>\n\n        </div>\n\n</nav>"
 
 /***/ }),
 
@@ -195,7 +195,7 @@ module.exports = "<div class=\"container .home-section-1\">\n    <div class=\"ro
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"fw_al_007\" class=\"carousel ps_rotate_scale_c ps_indicators_l ps_control_rotate_f swipe_x ps_easeOutQuint\"\n    data-ride=\"carousel\" data-pause=\"hover\" data-interval=\"5000\" data-duration=\"2000\">\n\n    <!-- Indicators -->\n    <ol class=\"carousel-indicators\">\n        <li data-target=\"#fw_al_007\" data-slide-to=\"0\" class=\"active\"></li>\n        <li data-target=\"#fw_al_007\" data-slide-to=\"1\"></li>\n        <li data-target=\"#fw_al_007\" data-slide-to=\"2\"></li>\n    </ol>\n\n    <!-- Wrapper For Slides -->\n    <div class=\"carousel-inner\" role=\"listbox\">\n\n        <!-- First Slide -->\n        <div class=\"carousel-item active\">\n\n            <!-- Slide Background -->\n            <img src=\"https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/35545495_387604691759943_54429390397767680_n.jpg?_nc_cat=106&_nc_oc=AQnueKBRtIqkWA2b1--FFz9PbtHiaCCXg1Ye2paUNIDkQ0espn8b40iv4KgkyqANQE0&_nc_ht=scontent.fcbr2-1.fna&oh=a66da40a429cc6547435f3949264ab4e&oe=5DF7176F\" alt=\"fw_al_007_01\">\n\n            <!-- Slide Text Layer -->\n            <div class=\"fw_al_007_slide\">\n                <h3 data-animation=\"animated flipInX\">my restaraunt</h3>\n                <h1 data-animation=\"animated flipInX\"><span>AWESOME</span> Food</h1>\n                <p data-animation=\"animated flipInX\">Vestibulum et urna aliquam pretium urna nec dapibus vehicula tellus\n                </p>\n                <a href=\"#\" data-animation=\"animated flipInX\">Our Menu</a>\n            </div>\n        </div>\n        <div class=\"carousel-item\">\n\n            <!-- Slide Background -->\n            <img src=\"https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/66465449_634585277061882_8895897565266968576_n.jpg?_nc_cat=106&_nc_oc=AQl7hAL3nZ5WBj3zse18k9K9nuyBqM23w22DN5AhUloLLvqSatNxzhrk-Zd-kWIrwzk&_nc_ht=scontent.fcbr2-1.fna&oh=c476950c65f5184e765f0067d89dcb2f&oe=5DF45BC7\" alt=\"fw_al_007_02\">\n\n            <!-- Slide Text Layer -->\n            <div class=\"fw_al_007_slide\">\n                <h3 data-animation=\"animated flipInX\">Reservations</h3>\n                <h1 data-animation=\"animated flipInX\"><span>Reserve</span> your table</h1>\n                <p data-animation=\"animated flipInX\">Vestibulum et urna aliquam pretium urna nec dapibus vehicula\n                    tellus</p>\n                <a href=\"#\" data-animation=\"animated flipInX\">Reserve Table</a>\n            </div>\n\n        </div>\n        <div class=\"carousel-item\">\n\n            <!-- Slide Background -->\n            <img src=\"https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/46844888_503346586852419_3944689932504662016_n.jpg?_nc_cat=109&_nc_oc=AQnV71x5nlEdQjoeI9-nYqpi4_fnVSthJghMcC3wDzbRBfy9asF3Zg8r6ROuKdIMLcU&_nc_ht=scontent.fcbr2-1.fna&oh=46bc01505c671cec2bd3734dd5d40303&oe=5E1050F2\" alt=\"fw_al_007_03\">\n\n            <!-- Slide Text Layer -->\n            <div class=\"fw_al_007_slide\">\n                <h3 data-animation=\"animated flipInX\">Event's</h3>\n                <h1 data-animation=\"animated flipInX\"><span>Catering</span> Service</h1>\n                <p data-animation=\"animated flipInX\">Vestibulum et urna aliquam pretium urna nec dapibus vehicula tellus\n                </p>\n                <a href=\"#\" data-animation=\"animated flipInX\">Contact Us</a>\n            </div>\n        </div>\n    </div>"
+module.exports = "\n<div id=\"fw_al_007\" class=\"carousel ps_rotate_scale_c ps_indicators_l ps_control_rotate_f swipe_x ps_easeOutQuint\"\n    data-ride=\"carousel\" data-pause=\"hover\" data-interval=\"5000\" data-duration=\"2000\">\n\n    <!-- Indicators -->\n    <ol class=\"carousel-indicators\">\n        <li data-target=\"#fw_al_007\" data-slide-to=\"0\" class=\"active\"></li>\n        <li data-target=\"#fw_al_007\" data-slide-to=\"1\"></li>\n        <li data-target=\"#fw_al_007\" data-slide-to=\"2\"></li>\n    </ol>\n\n    <!-- Wrapper For Slides -->\n    <div class=\"carousel-inner\" role=\"listbox\">\n\n        <!-- First Slide -->\n        <div class=\"carousel-item active\">\n\n            <!-- Slide Background -->\n            <img src=\"https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/35545495_387604691759943_54429390397767680_n.jpg?_nc_cat=106&_nc_oc=AQnueKBRtIqkWA2b1--FFz9PbtHiaCCXg1Ye2paUNIDkQ0espn8b40iv4KgkyqANQE0&_nc_ht=scontent.fcbr2-1.fna&oh=a66da40a429cc6547435f3949264ab4e&oe=5DF7176F\" alt=\"fw_al_007_01\">\n\n            <!-- Slide Text Layer -->\n            <div class=\"fw_al_007_slide\">\n                <h3 data-animation=\"animated flipInX\">my restaraunt</h3>\n                <h1 data-animation=\"animated flipInX\"><span>AWESOME</span> Food</h1>\n                <p data-animation=\"animated flipInX\">Vestibulum et urna aliquam pretium urna nec dapibus vehicula tellus\n                </p>\n                <a [routerLink]=\"['/our-menu']\" routerLinkActive=\"router-link-active\"  data-animation=\"animated flipInX\">Our Menu</a>\n            </div>\n        </div>\n        <div class=\"carousel-item\">\n\n            <!-- Slide Background -->\n            <img src=\"https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/66465449_634585277061882_8895897565266968576_n.jpg?_nc_cat=106&_nc_oc=AQl7hAL3nZ5WBj3zse18k9K9nuyBqM23w22DN5AhUloLLvqSatNxzhrk-Zd-kWIrwzk&_nc_ht=scontent.fcbr2-1.fna&oh=c476950c65f5184e765f0067d89dcb2f&oe=5DF45BC7\" alt=\"fw_al_007_02\">\n\n            <!-- Slide Text Layer -->\n            <div class=\"fw_al_007_slide\">\n                <h3 data-animation=\"animated flipInX\">Reservations</h3>\n                <h1 data-animation=\"animated flipInX\"><span>Reserve</span> your table</h1>\n                <p data-animation=\"animated flipInX\">Vestibulum et urna aliquam pretium urna nec dapibus vehicula\n                    tellus</p>\n                <a href=\"#\" data-animation=\"animated flipInX\">Reserve Table</a>\n            </div>\n\n        </div>\n        <div class=\"carousel-item\">\n\n            <!-- Slide Background -->\n            <img src=\"https://scontent.fcbr2-1.fna.fbcdn.net/v/t1.0-9/46844888_503346586852419_3944689932504662016_n.jpg?_nc_cat=109&_nc_oc=AQnV71x5nlEdQjoeI9-nYqpi4_fnVSthJghMcC3wDzbRBfy9asF3Zg8r6ROuKdIMLcU&_nc_ht=scontent.fcbr2-1.fna&oh=46bc01505c671cec2bd3734dd5d40303&oe=5E1050F2\" alt=\"fw_al_007_03\">\n\n            <!-- Slide Text Layer -->\n            <div class=\"fw_al_007_slide\">\n                <h3 data-animation=\"animated flipInX\">Event's</h3>\n                <h1 data-animation=\"animated flipInX\"><span>Catering</span> Service</h1>\n                <p data-animation=\"animated flipInX\">Vestibulum et urna aliquam pretium urna nec dapibus vehicula tellus\n                </p>\n                <a href=\"#\" data-animation=\"animated flipInX\">Contact Us</a>\n            </div>\n        </div>\n    </div>"
 
 /***/ }),
 
@@ -206,7 +206,7 @@ module.exports = "<div id=\"fw_al_007\" class=\"carousel ps_rotate_scale_c ps_in
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer>\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4 footer-navigation\">\n            <h3><a href=\"#\"><span><img class=\"footer-icon\" src=\"../../../../assets/blackstoneicon2.png\"></span></a></h3>\n            <p class=\"links\">\n                <a href=\"#\">Contact</a>\n            </p>\n            <p class=\"company-name\">Blackstone © 2019</p>\n            <a [routerLink]=\"['/login']\" routerLinkActive=\"router-link-active\" >Admin login</a>\n        </div>\n        <div class=\"col-sm-6 col-md-4 footer-contacts\">\n            <div><span class=\"fa fa-map-marker footer-contacts-icon\"> </span>\n                <p><span class=\"new-line-span\">CnrJerrabomberra Ave & Hindmarsh Dr</span>Symonston, ACT, Australia</p>\n            </div>\n            <div><i class=\"fa fa-phone footer-contacts-icon\"></i>\n                <p class=\"footer-center-info email text-left\"> +61 1234 123456</p>\n            </div>\n            <div><i class=\"fa fa-envelope footer-contacts-icon\"></i>\n                <p> <a href=\"#\" target=\"_blank\">support@company.com</a></p>\n            </div>\n        </div>\n        <div class=\"clearfix\"></div>\n        <div class=\"col-md-4 footer-about\">\n            <h4>About the company</h4>\n            <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus\n                vehicula sit amet. </p>\n            <div class=\"social-links social-icons\">\n                <a href=\"#\"><i class=\"fa fa-facebook\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-twitter\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>\n            </div>\n        </div>\n    </div>\n</footer>"
+module.exports = "<footer>\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-md-4 footer-navigation\">\n            <h3><a href=\"#\"><span><img class=\"footer-icon\" src=\"../../../../assets/blackstoneicon2.png\"></span></a></h3>\n            <p class=\"links\">\n                <a href=\"#\">Contact</a>\n            </p>\n            <p class=\"company-name\">Blackstone © 2019</p>\n            <a [routerLink]=\"['/login']\" routerLinkActive=\"router-link-active\" >Admin login</a>\n        </div>\n        <div class=\"col-sm-6 col-md-4 footer-contacts\">\n            <div><span class=\"fa fa-map-marker footer-contacts-icon\"> </span>\n                <p><span class=\"new-line-span\">CnrJerrabomberra Ave & Hindmarsh Dr</span>Symonston, ACT, Australia</p>\n            </div>\n            <div><i class=\"fa fa-phone footer-contacts-icon\"></i>\n                <p class=\"footer-center-info email text-left\"> +61 1234 123456</p>\n            </div>\n            <div><i class=\"fa fa-envelope footer-contacts-icon\"></i>\n                <p> <a href=\"#\" target=\"_blank\">support@company.com</a></p>\n            </div>\n        </div>\n        <div class=\"col-md-4 col-sm-12 footer-about\">\n            <h4>About the company</h4>\n            <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus\n                vehicula sit amet. </p>\n            <div class=\"social-links social-icons\">\n                <a href=\"#\"><i class=\"fa fa-facebook\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-twitter\"></i></a>\n                <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>\n            </div>\n        </div>\n    </div>\n</footer>"
 
 /***/ }),
 
@@ -218,6 +218,17 @@ module.exports = "<footer>\n    <div class=\"row\">\n        <div class=\"col-sm
 /***/ (function(module, exports) {
 
 module.exports = "<app-carousel></app-carousel>\n<app-about></app-about>\n<app-reservation></app-reservation>\n<app-menu-feature></app-menu-feature>\n<app-footer></app-footer>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/ui/image-gallery/image-gallery.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/ui/image-gallery/image-gallery.component.html ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "    <div class=\"jumbotron header-jumbotron-display\" style=\"height: 250px;\">\n        <h1 class=\"text-center jumbotron-header\" style=\"font-family: Poppins, sans-serif;color: rgb(246,247,248);\">Gallery</h1>\n        <p></p>\n    </div>\n    <div class=\"photo-gallery\">\n        <div class=\"container\">\n            <div class=\"intro\">\n                <h2 class=\"text-center\" style=\"font-family: Poppins, sans-serif;\">Blackstone Gallery</h2>\n                <p class=\"text-center\" style=\"font-family: Courgette, cursive;\">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>\n            </div>\n            <div class=\"row photos\" *ngFor=\"let image of imageList\">\n                <div class=\"col-sm-6 col-md-4 col-lg-3 item\"><a data-lightbox=\"photos\"><img class=\"img-fluid\" src=\"{{image.imageUrl}}\"></a></div>\n            </div>\n        </div>\n    </div>\n    <app-footer></app-footer>"
 
 /***/ }),
 
@@ -250,7 +261,7 @@ module.exports = "    <div class=\"row\">\n        <div class=\"col\" style=\"ba
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron header-jumbotron-display\" style=\"height: 250px;\">\n    <h1 class=\"text-center jumbotron-header\" style=\"font-family: Poppins, sans-serif;color: rgb(246,247,248);\">Our Menu\n    </h1>\n    <p></p>\n</div>\n<h1 class=\"text-center\" style=\"color: rgb(215,8,8);font-family: Courgette, cursive;\">Fan Favorite</h1>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6\">\n            <div>\n                <h3 style=\"font-family: Poppins, sans-serif;\">STARTERS<br></h3>\n                <div *ngFor=\"let menu of menuList\" class=\"row\">\n                    <div class=\"col-md-6\">\n                        <p style=\"font-family: Poppins, sans-serif;\">{{menu.name}}</p>\n                        <p class=\"food-description\" style=\"font-family: Courgette, cursive;font-size: 13px;\">\n                            {{menu.description}}</p>\n                    </div>\n                    <div class=\"col-md-6\">\n                        <p class=\"text-right\" style=\"font-family: Poppins, sans-serif;\">{{menu.price| currency}}<br></p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"jumbotron header-jumbotron-display\" style=\"height: 250px;\">\n    <h1 class=\"text-center jumbotron-header\" style=\"font-family: Poppins, sans-serif;color: rgb(246,247,248);\">Our Menu\n    </h1>\n    <p></p>\n</div>\n<h1 class=\"text-center\" style=\"color: rgb(215,8,8);font-family: Courgette, cursive;\">Fan Favorite</h1>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-md-6\">\n            <div>\n                <h3 style=\"font-family: Poppins, sans-serif;\">Breakfast<br></h3>\n                <div *ngFor=\"let menu of breakfastList\" class=\"row\">\n                    <div class=\"col-md-8\">\n                        <p style=\"font-family: Poppins, sans-serif;\">\n                            <b>{{menu.name}}</b>\n                            <br>\n                            {{menu.description}}\n                        </p>\n                    </div>\n                    <div class=\"col-md-4\">\n                        <p class=\"text-right\" style=\"font-family: Poppins, sans-serif;\">{{menu.price| currency}}<br></p>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-6 col-md-6\">\n            <div>\n                <h3 style=\"font-family: Poppins, sans-serif;\">Salads<br></h3>\n                <div *ngFor=\"let menu of saladsList\" class=\"row\">\n                    <div class=\"col-md-8\">\n                        <p style=\"font-family: Poppins, sans-serif;\">\n                            <b>{{menu.name}}</b>\n                            <br>\n                            {{menu.description}}\n                        </p>\n\n                    </div>\n                    <div class=\"col-md-4\">\n                        <p class=\"text-right\">{{menu.price| currency}}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-6 col-md-6\">\n            <div>\n                <h3 style=\"font-family: Poppins, sans-serif;\">Pasta</h3>\n                <div *ngFor=\"let menu of pastaList\" class=\"row\">\n                    <div class=\"col-md-8\">\n                        <p style=\"font-family: Poppins, sans-serif;\">\n                            <b>{{menu.name}}</b>\n                            <br>\n                            {{menu.description}}\n                        </p>\n                    </div>\n                    <div class=\"col-md-4\">\n\n                        <p class=\"text-right\">{{menu.price| currency}}</p>\n\n                    </div>\n\n                </div>\n            </div>\n        </div>\n        <div class=\"col-sm-6 col-md-6\">\n            <div>\n                <h3 style=\"font-family: Poppins, sans-serif;\">Burgers</h3>\n                <div *ngFor=\"let menu of burgersList\" class=\"row\">\n                    <div class=\"col-md-8\">\n                        <p style=\"font-family: Poppins, sans-serif;\">\n                            <b>{{menu.name}}</b>\n                            <br>\n                            {{menu.description}}\n                        </p>\n                    </div>\n                    <div class=\"col-md-4\">\n\n                        <p class=\"text-right\">{{menu.price| currency}}</p>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -376,6 +387,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_menu_feature_menu_feature_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/ui/menu-feature/menu-feature.component */ "./src/app/components/ui/menu-feature/menu-feature.component.ts");
 /* harmony import */ var _components_ui_footer_footer_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/ui/footer/footer.component */ "./src/app/components/ui/footer/footer.component.ts");
 /* harmony import */ var _components_ui_ui_menu_ui_menu_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/ui/ui-menu/ui-menu.component */ "./src/app/components/ui/ui-menu/ui-menu.component.ts");
+/* harmony import */ var _components_ui_image_gallery_image_gallery_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/ui/image-gallery/image-gallery.component */ "./src/app/components/ui/image-gallery/image-gallery.component.ts");
+
 
 
 
@@ -439,6 +452,7 @@ var AppModule = /** @class */ (function () {
                 _components_ui_menu_feature_menu_feature_component__WEBPACK_IMPORTED_MODULE_33__["MenuFeatureComponent"],
                 _components_ui_footer_footer_component__WEBPACK_IMPORTED_MODULE_34__["FooterComponent"],
                 _components_ui_ui_menu_ui_menu_component__WEBPACK_IMPORTED_MODULE_35__["UiMenuComponent"],
+                _components_ui_image_gallery_image_gallery_component__WEBPACK_IMPORTED_MODULE_36__["ImageGalleryComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -493,6 +507,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_admin_image_image_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/admin/image/image.component */ "./src/app/components/admin/image/image.component.ts");
 /* harmony import */ var _components_ui_home_home_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/ui/home/home.component */ "./src/app/components/ui/home/home.component.ts");
 /* harmony import */ var _components_ui_ui_menu_ui_menu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/ui/ui-menu/ui-menu.component */ "./src/app/components/ui/ui-menu/ui-menu.component.ts");
+/* harmony import */ var _components_ui_image_gallery_image_gallery_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/ui/image-gallery/image-gallery.component */ "./src/app/components/ui/image-gallery/image-gallery.component.ts");
+
 
 
 
@@ -576,6 +592,10 @@ var appRoutes = [
     {
         path: 'our-menu',
         component: _components_ui_ui_menu_ui_menu_component__WEBPACK_IMPORTED_MODULE_13__["UiMenuComponent"]
+    },
+    {
+        path: 'gallery',
+        component: _components_ui_image_gallery_image_gallery_component__WEBPACK_IMPORTED_MODULE_14__["ImageGalleryComponent"]
     }
 ];
 var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes);
@@ -1085,17 +1105,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_service_image_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/service/image.service */ "./src/app/service/image.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
 
 
 
 
 var ImageComponent = /** @class */ (function () {
-    function ImageComponent(imageService, router) {
+    function ImageComponent(imageService) {
         this.imageService = imageService;
-        this.router = router;
         this.loading = false;
+        this.deleteLoading = false;
         this.imageForm = this.imageFormValidator();
     }
     ImageComponent.prototype.imageFormValidator = function () {
@@ -1114,6 +1132,7 @@ var ImageComponent = /** @class */ (function () {
         this.loading = true;
         this.imageService.postImage(file, this.imageName).subscribe(function () {
             _this.loading = false;
+            location.reload();
             console.log('Image saved');
         }, function (error) {
             console.error(error);
@@ -1121,12 +1140,12 @@ var ImageComponent = /** @class */ (function () {
     };
     ImageComponent.prototype.deleteImage = function (id) {
         var _this = this;
-        this.loading = true;
+        this.deleteLoading = true;
         this.imageService.deleteImageById(id).subscribe(function (res) {
             if (res.ok) {
                 _this.loading = false;
-                _this.imageService.getImages(0, 10).subscribe(function (res) {
-                    if (res.ok) {
+                _this.imageService.getImages(0, 10).subscribe(function (response) {
+                    if (response.ok) {
                         _this.images = res.json().content;
                     }
                 });
@@ -1146,8 +1165,7 @@ var ImageComponent = /** @class */ (function () {
         }, function (error) { return console.error(error); });
     };
     ImageComponent.ctorParameters = function () { return [
-        { type: src_app_service_image_service__WEBPACK_IMPORTED_MODULE_2__["ImageService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+        { type: src_app_service_image_service__WEBPACK_IMPORTED_MODULE_2__["ImageService"] }
     ]; };
     ImageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1309,6 +1327,7 @@ var AddMenuComponent = /** @class */ (function () {
                 _this.menuAdded = true;
                 _this.menu = new src_models_menu__WEBPACK_IMPORTED_MODULE_2__["Menu"]();
                 _this.menu.createdOn = new Date();
+                location.reload();
                 _this.router.navigate(['/menu']);
             }, function (error) {
                 console.log(error);
@@ -1484,6 +1503,7 @@ var MenuListComponent = /** @class */ (function () {
         this.displayedColumns = ['title', 'price', 'createdOn'];
         this.menuId = 0;
         this.idSelected = false;
+        this.pageNum = 0;
     }
     MenuListComponent.prototype.convertDate = function (date) {
         return this.sharedService.convertDate(date);
@@ -1494,7 +1514,7 @@ var MenuListComponent = /** @class */ (function () {
     };
     MenuListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.getMenuListService.getMenu(0, 10).subscribe(function (res) {
+        this.getMenuListService.getMenu(0, 50).subscribe(function (res) {
             if (res.ok) {
                 console.log(res.json());
                 _this.menuList = res.json().content;
@@ -1532,7 +1552,7 @@ var MenuListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navigation-clean {\n  background: #fff;\n  padding-top: .75rem;\n  padding-bottom: .75rem;\n  color: #333;\n  border-radius: 0;\n  box-shadow: none;\n  border: none;\n  margin-bottom: 0;\n}\n\n@media (min-width:767px) {\n  .navigation-clean {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n  }\n  .navbar-brand{\n    margin-left: 200px;\n  }\n  .navigation-clean .navbar-collapse, .navigation-clean .form-inline{\n    margin-left: 700px;\n  }\n}\n\n@media (max-width:1024px) {\n  .navigation-clean {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n  }\n  .navbar-brand{\n    margin-left: 0;\n  }\n  .navigation-clean .navbar-collapse, .navigation-clean .form-inline{\n    margin-left: 10px;\n  }\n}\n\n.navigation-clean .navbar-brand {\n  /* margin-left: 200px; */\n  font-weight: bold;\n  color: inherit;\n}\n\n.navigation-clean .navbar-brand:hover {\n  color: #222;\n}\n\n.navigation-clean .navbar-toggler {\n  border-color: #ddd;\n}\n\n.navigation-clean .navbar-toggler:hover, .navigation-clean .navbar-toggler:focus {\n  \n  background: none;\n}\n\n.navigation-clean .navbar-toggler {\n  color: #888;\n}\n\n.navigation-clean .navbar-collapse, .navigation-clean .form-inline {\n  border-top-color: #ddd;\n}\n\n.navigation-clean.navbar-light .navbar-nav .nav-link.active, .navigation-clean.navbar-light .navbar-nav .nav-link.active:focus, .navigation-clean.navbar-light .navbar-nav .nav-link.active:hover {\n  color: #8f8f8f;\n  box-shadow: none;\n  background: none;\n  pointer-events: none;\n}\n\n.navigation-clean.navbar .navbar-nav .nav-link {\n  padding-left: 18px;\n  padding-right: 18px;\n}\n\n.navigation-clean.navbar-light .navbar-nav .nav-link {\n  \n  color: #465765;\n}\n\n.navigation-clean.navbar-light .navbar-nav .nav-link:focus, .navigation-clean.navbar-light .navbar-nav .nav-link:hover {\n  color: #37434d !important;\n  background-color: transparent;\n}\n\n.navigation-clean .navbar-nav > li > .dropdown-menu {\n  margin-top: -5px;\n  box-shadow: none;\n  background-color: #fff;\n  border-radius: 2px;\n}\n\n.navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item {\n  line-height: 2;\n  color: #37434d;\n}\n\n.navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item:hover {\n  background: #eee;\n  color: inherit;\n}\n\n/*admin nav*/\n\n.example-spacer {\n\t-webkit-box-flex: 1;\n\t        flex: 1 1 auto;\n}\n\n.mat-radio-button {\n\tmargin: 0 20px;\n\tdisplay: -webkit-box;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: reverse;\n\t        flex-direction: column-reverse;\n\tpadding: 10%;\n}\n\na{\n\tcolor: inherit;\n\ttext-decoration: none;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9uYXYtYmFyL25hdi1iYXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLFlBQVk7RUFDWixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRTtJQUNFLGlCQUFpQjtJQUNqQixvQkFBb0I7RUFDdEI7RUFDQTtJQUNFLGtCQUFrQjtFQUNwQjtFQUNBO0lBQ0Usa0JBQWtCO0VBQ3BCO0FBQ0Y7O0FBQ0E7RUFDRTtJQUNFLGlCQUFpQjtJQUNqQixvQkFBb0I7RUFDdEI7RUFDQTtJQUNFLGNBQWM7RUFDaEI7RUFDQTtJQUNFLGlCQUFpQjtFQUNuQjtBQUNGOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLGlCQUFpQjtFQUNqQixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBOztFQUVFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFDckI7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6Qiw2QkFBNkI7QUFDL0I7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLHNCQUFzQjtFQUN0QixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixjQUFjO0FBQ2hCOztBQUVBLFlBQVk7O0FBQ1o7Q0FDQyxtQkFBYztTQUFkLGNBQWM7QUFDZjs7QUFFQTtDQUNDLGNBQWM7Q0FDZCxvQkFBYTtDQUFiLGFBQWE7Q0FDYiw0QkFBOEI7Q0FBOUIsOEJBQThCO1NBQTlCLDhCQUE4QjtDQUM5QixZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxjQUFjO0NBQ2QscUJBQXFCO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9uYXYtYmFyL25hdi1iYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZpZ2F0aW9uLWNsZWFuIHtcbiAgYmFja2dyb3VuZDogI2ZmZjtcbiAgcGFkZGluZy10b3A6IC43NXJlbTtcbiAgcGFkZGluZy1ib3R0b206IC43NXJlbTtcbiAgY29sb3I6ICMzMzM7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG4gIGJvcmRlcjogbm9uZTtcbiAgbWFyZ2luLWJvdHRvbTogMDtcbn1cblxuQG1lZGlhIChtaW4td2lkdGg6NzY3cHgpIHtcbiAgLm5hdmlnYXRpb24tY2xlYW4ge1xuICAgIHBhZGRpbmctdG9wOiAxcmVtO1xuICAgIHBhZGRpbmctYm90dG9tOiAxcmVtO1xuICB9XG4gIC5uYXZiYXItYnJhbmR7XG4gICAgbWFyZ2luLWxlZnQ6IDIwMHB4O1xuICB9XG4gIC5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItY29sbGFwc2UsIC5uYXZpZ2F0aW9uLWNsZWFuIC5mb3JtLWlubGluZXtcbiAgICBtYXJnaW4tbGVmdDogNzAwcHg7XG4gIH1cbn1cbkBtZWRpYSAobWF4LXdpZHRoOjEwMjRweCkge1xuICAubmF2aWdhdGlvbi1jbGVhbiB7XG4gICAgcGFkZGluZy10b3A6IDFyZW07XG4gICAgcGFkZGluZy1ib3R0b206IDFyZW07XG4gIH1cbiAgLm5hdmJhci1icmFuZHtcbiAgICBtYXJnaW4tbGVmdDogMDtcbiAgfVxuICAubmF2aWdhdGlvbi1jbGVhbiAubmF2YmFyLWNvbGxhcHNlLCAubmF2aWdhdGlvbi1jbGVhbiAuZm9ybS1pbmxpbmV7XG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XG4gIH1cbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLm5hdmJhci1icmFuZCB7XG4gIC8qIG1hcmdpbi1sZWZ0OiAyMDBweDsgKi9cbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiBpbmhlcml0O1xufVxuXG4ubmF2aWdhdGlvbi1jbGVhbiAubmF2YmFyLWJyYW5kOmhvdmVyIHtcbiAgY29sb3I6ICMyMjI7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItdG9nZ2xlciB7XG4gIGJvcmRlci1jb2xvcjogI2RkZDtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLm5hdmJhci10b2dnbGVyOmhvdmVyLCAubmF2aWdhdGlvbi1jbGVhbiAubmF2YmFyLXRvZ2dsZXI6Zm9jdXMge1xuICBcbiAgYmFja2dyb3VuZDogbm9uZTtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLm5hdmJhci10b2dnbGVyIHtcbiAgY29sb3I6ICM4ODg7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItY29sbGFwc2UsIC5uYXZpZ2F0aW9uLWNsZWFuIC5mb3JtLWlubGluZSB7XG4gIGJvcmRlci10b3AtY29sb3I6ICNkZGQ7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbmsuYWN0aXZlLCAubmF2aWdhdGlvbi1jbGVhbi5uYXZiYXItbGlnaHQgLm5hdmJhci1uYXYgLm5hdi1saW5rLmFjdGl2ZTpmb2N1cywgLm5hdmlnYXRpb24tY2xlYW4ubmF2YmFyLWxpZ2h0IC5uYXZiYXItbmF2IC5uYXYtbGluay5hY3RpdmU6aG92ZXIge1xuICBjb2xvcjogIzhmOGY4ZjtcbiAgYm94LXNoYWRvdzogbm9uZTtcbiAgYmFja2dyb3VuZDogbm9uZTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhciAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xuICBwYWRkaW5nLWxlZnQ6IDE4cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDE4cHg7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xuICBcbiAgY29sb3I6ICM0NjU3NjU7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbms6Zm9jdXMsIC5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbms6aG92ZXIge1xuICBjb2xvcjogIzM3NDM0ZCAhaW1wb3J0YW50O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLm5hdmJhci1uYXYgPiBsaSA+IC5kcm9wZG93bi1tZW51IHtcbiAgbWFyZ2luLXRvcDogLTVweDtcbiAgYm94LXNoYWRvdzogbm9uZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgYm9yZGVyLXJhZGl1czogMnB4O1xufVxuXG4ubmF2aWdhdGlvbi1jbGVhbiAuZHJvcGRvd24tbWVudSAuZHJvcGRvd24taXRlbTpmb2N1cywgLm5hdmlnYXRpb24tY2xlYW4gLmRyb3Bkb3duLW1lbnUgLmRyb3Bkb3duLWl0ZW0ge1xuICBsaW5lLWhlaWdodDogMjtcbiAgY29sb3I6ICMzNzQzNGQ7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuIC5kcm9wZG93bi1tZW51IC5kcm9wZG93bi1pdGVtOmZvY3VzLCAubmF2aWdhdGlvbi1jbGVhbiAuZHJvcGRvd24tbWVudSAuZHJvcGRvd24taXRlbTpob3ZlciB7XG4gIGJhY2tncm91bmQ6ICNlZWU7XG4gIGNvbG9yOiBpbmhlcml0O1xufVxuXG4vKmFkbWluIG5hdiovXG4uZXhhbXBsZS1zcGFjZXIge1xuXHRmbGV4OiAxIDEgYXV0bztcbn1cblxuLm1hdC1yYWRpby1idXR0b24ge1xuXHRtYXJnaW46IDAgMjBweDtcblx0ZGlzcGxheTogZmxleDtcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbi1yZXZlcnNlO1xuXHRwYWRkaW5nOiAxMCU7XG59XG5cbmF7XG5cdGNvbG9yOiBpbmhlcml0O1xuXHR0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbiJdfQ== */"
+module.exports = ".navigation-clean {\n  background: #fff;\n  padding-top: .75rem;\n  padding-bottom: .75rem;\n  color: #333;\n  border-radius: 0;\n  box-shadow: none;\n  border: none;\n  margin-bottom: 0;\n}\n\n@media (min-width:767px) {\n  .navigation-clean {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n  }\n\n  .navbar-brand {\n    margin-left: 200px;\n  }\n}\n\n@media (max-width:1024px) {\n  .navigation-clean {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n  }\n\n  .navbar-brand {\n    margin-left: 0;\n  }\n\n  .navigation-clean .navbar-collapse,\n  .navigation-clean .form-inline {\n    margin-left: 10px;\n  }\n}\n\n.navigation-clean .navbar-brand {\n  /* margin-left: 200px; */\n  font-weight: bold;\n  color: inherit;\n}\n\n.navigation-clean .navbar-brand:hover {\n  color: #222;\n}\n\n.navigation-clean .navbar-toggler {\n  border-color: #ddd;\n}\n\n.navigation-clean .navbar-toggler:hover,\n.navigation-clean .navbar-toggler:focus {\n\n  background: none;\n}\n\n.navigation-clean .navbar-toggler {\n  color: #888;\n}\n\n.navigation-clean .navbar-collapse,\n.navigation-clean .form-inline {\n  border-top-color: #ddd;\n}\n\n.navigation-clean.navbar-light .navbar-nav .nav-link.active,\n.navigation-clean.navbar-light .navbar-nav .nav-link.active:focus,\n.navigation-clean.navbar-light .navbar-nav .nav-link.active:hover {\n  color: #8f8f8f;\n  box-shadow: none;\n  background: none;\n  pointer-events: none;\n}\n\n.navigation-clean.navbar .navbar-nav .nav-link {\n  padding-left: 18px;\n  padding-right: 18px;\n}\n\n.navigation-clean.navbar-light .navbar-nav .nav-link {\n\n  color: #465765;\n}\n\n.navigation-clean.navbar-light .navbar-nav .nav-link:focus,\n.navigation-clean.navbar-light .navbar-nav .nav-link:hover {\n  color: #37434d !important;\n  background-color: transparent;\n}\n\n.navigation-clean .navbar-nav>li>.dropdown-menu {\n  margin-top: -5px;\n  box-shadow: none;\n  background-color: #fff;\n  border-radius: 2px;\n}\n\n.navigation-clean .dropdown-menu .dropdown-item:focus,\n.navigation-clean .dropdown-menu .dropdown-item {\n  line-height: 2;\n  color: #37434d;\n}\n\n.navigation-clean .dropdown-menu .dropdown-item:focus,\n.navigation-clean .dropdown-menu .dropdown-item:hover {\n  background: #eee;\n  color: inherit;\n}\n\n/*admin nav*/\n\n.example-spacer {\n  -webkit-box-flex: 1;\n          flex: 1 1 auto;\n}\n\n.mat-radio-button {\n  margin: 0 20px;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: reverse;\n          flex-direction: column-reverse;\n  padding: 10%;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\n.blacstone-nav {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n\n.blacstone-nav .navbar-collapse {\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbi9uYXYtYmFyL25hdi1iYXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsc0JBQXNCO0VBQ3RCLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLFlBQVk7RUFDWixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRTtJQUNFLGlCQUFpQjtJQUNqQixvQkFBb0I7RUFDdEI7O0VBRUE7SUFDRSxrQkFBa0I7RUFDcEI7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsaUJBQWlCO0lBQ2pCLG9CQUFvQjtFQUN0Qjs7RUFFQTtJQUNFLGNBQWM7RUFDaEI7O0VBRUE7O0lBRUUsaUJBQWlCO0VBQ25CO0FBQ0Y7O0FBRUE7RUFDRSx3QkFBd0I7RUFDeEIsaUJBQWlCO0VBQ2pCLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7OztFQUdFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTs7RUFFRSxzQkFBc0I7QUFDeEI7O0FBRUE7OztFQUdFLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7QUFDckI7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7QUFFQTs7RUFFRSx5QkFBeUI7RUFDekIsNkJBQTZCO0FBQy9COztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixzQkFBc0I7RUFDdEIsa0JBQWtCO0FBQ3BCOztBQUVBOztFQUVFLGNBQWM7RUFDZCxjQUFjO0FBQ2hCOztBQUVBOztFQUVFLGdCQUFnQjtFQUNoQixjQUFjO0FBQ2hCOztBQUVBLFlBQVk7O0FBQ1o7RUFDRSxtQkFBYztVQUFkLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2Qsb0JBQWE7RUFBYixhQUFhO0VBQ2IsNEJBQThCO0VBQTlCLDhCQUE4QjtVQUE5Qiw4QkFBOEI7RUFDOUIsWUFBWTtBQUNkOztBQUVBO0VBQ0UsY0FBYztFQUNkLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLG9CQUFhO0VBQWIsYUFBYTtFQUNiLHlCQUE4QjtVQUE5Qiw4QkFBOEI7QUFDaEM7O0FBRUE7QUFDQSIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW4vbmF2LWJhci9uYXYtYmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubmF2aWdhdGlvbi1jbGVhbiB7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIHBhZGRpbmctdG9wOiAuNzVyZW07XG4gIHBhZGRpbmctYm90dG9tOiAuNzVyZW07XG4gIGNvbG9yOiAjMzMzO1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBib3gtc2hhZG93OiBub25lO1xuICBib3JkZXI6IG5vbmU7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOjc2N3B4KSB7XG4gIC5uYXZpZ2F0aW9uLWNsZWFuIHtcbiAgICBwYWRkaW5nLXRvcDogMXJlbTtcbiAgICBwYWRkaW5nLWJvdHRvbTogMXJlbTtcbiAgfVxuXG4gIC5uYXZiYXItYnJhbmQge1xuICAgIG1hcmdpbi1sZWZ0OiAyMDBweDtcbiAgfVxufVxuXG5AbWVkaWEgKG1heC13aWR0aDoxMDI0cHgpIHtcbiAgLm5hdmlnYXRpb24tY2xlYW4ge1xuICAgIHBhZGRpbmctdG9wOiAxcmVtO1xuICAgIHBhZGRpbmctYm90dG9tOiAxcmVtO1xuICB9XG5cbiAgLm5hdmJhci1icmFuZCB7XG4gICAgbWFyZ2luLWxlZnQ6IDA7XG4gIH1cblxuICAubmF2aWdhdGlvbi1jbGVhbiAubmF2YmFyLWNvbGxhcHNlLFxuICAubmF2aWdhdGlvbi1jbGVhbiAuZm9ybS1pbmxpbmUge1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xuICB9XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItYnJhbmQge1xuICAvKiBtYXJnaW4tbGVmdDogMjAwcHg7ICovXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBjb2xvcjogaW5oZXJpdDtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLm5hdmJhci1icmFuZDpob3ZlciB7XG4gIGNvbG9yOiAjMjIyO1xufVxuXG4ubmF2aWdhdGlvbi1jbGVhbiAubmF2YmFyLXRvZ2dsZXIge1xuICBib3JkZXItY29sb3I6ICNkZGQ7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItdG9nZ2xlcjpob3Zlcixcbi5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItdG9nZ2xlcjpmb2N1cyB7XG5cbiAgYmFja2dyb3VuZDogbm9uZTtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLm5hdmJhci10b2dnbGVyIHtcbiAgY29sb3I6ICM4ODg7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuIC5uYXZiYXItY29sbGFwc2UsXG4ubmF2aWdhdGlvbi1jbGVhbiAuZm9ybS1pbmxpbmUge1xuICBib3JkZXItdG9wLWNvbG9yOiAjZGRkO1xufVxuXG4ubmF2aWdhdGlvbi1jbGVhbi5uYXZiYXItbGlnaHQgLm5hdmJhci1uYXYgLm5hdi1saW5rLmFjdGl2ZSxcbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbmsuYWN0aXZlOmZvY3VzLFxuLm5hdmlnYXRpb24tY2xlYW4ubmF2YmFyLWxpZ2h0IC5uYXZiYXItbmF2IC5uYXYtbGluay5hY3RpdmU6aG92ZXIge1xuICBjb2xvcjogIzhmOGY4ZjtcbiAgYm94LXNoYWRvdzogbm9uZTtcbiAgYmFja2dyb3VuZDogbm9uZTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhciAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xuICBwYWRkaW5nLWxlZnQ6IDE4cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDE4cHg7XG59XG5cbi5uYXZpZ2F0aW9uLWNsZWFuLm5hdmJhci1saWdodCAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xuXG4gIGNvbG9yOiAjNDY1NzY1O1xufVxuXG4ubmF2aWdhdGlvbi1jbGVhbi5uYXZiYXItbGlnaHQgLm5hdmJhci1uYXYgLm5hdi1saW5rOmZvY3VzLFxuLm5hdmlnYXRpb24tY2xlYW4ubmF2YmFyLWxpZ2h0IC5uYXZiYXItbmF2IC5uYXYtbGluazpob3ZlciB7XG4gIGNvbG9yOiAjMzc0MzRkICFpbXBvcnRhbnQ7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4ubmF2aWdhdGlvbi1jbGVhbiAubmF2YmFyLW5hdj5saT4uZHJvcGRvd24tbWVudSB7XG4gIG1hcmdpbi10b3A6IC01cHg7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJvcmRlci1yYWRpdXM6IDJweDtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLmRyb3Bkb3duLW1lbnUgLmRyb3Bkb3duLWl0ZW06Zm9jdXMsXG4ubmF2aWdhdGlvbi1jbGVhbiAuZHJvcGRvd24tbWVudSAuZHJvcGRvd24taXRlbSB7XG4gIGxpbmUtaGVpZ2h0OiAyO1xuICBjb2xvcjogIzM3NDM0ZDtcbn1cblxuLm5hdmlnYXRpb24tY2xlYW4gLmRyb3Bkb3duLW1lbnUgLmRyb3Bkb3duLWl0ZW06Zm9jdXMsXG4ubmF2aWdhdGlvbi1jbGVhbiAuZHJvcGRvd24tbWVudSAuZHJvcGRvd24taXRlbTpob3ZlciB7XG4gIGJhY2tncm91bmQ6ICNlZWU7XG4gIGNvbG9yOiBpbmhlcml0O1xufVxuXG4vKmFkbWluIG5hdiovXG4uZXhhbXBsZS1zcGFjZXIge1xuICBmbGV4OiAxIDEgYXV0bztcbn1cblxuLm1hdC1yYWRpby1idXR0b24ge1xuICBtYXJnaW46IDAgMjBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbi1yZXZlcnNlO1xuICBwYWRkaW5nOiAxMCU7XG59XG5cbmEge1xuICBjb2xvcjogaW5oZXJpdDtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuXG4uYmxhY3N0b25lLW5hdiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmJsYWNzdG9uZS1uYXYgLm5hdmJhci1jb2xsYXBzZSB7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -1816,6 +1836,63 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/ui/image-gallery/image-gallery.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/ui/image-gallery/image-gallery.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".photo-gallery {\n  color: #313437;\n  background-color: #fff;\n}\n\n.photo-gallery p {\n  color: #7d8285;\n}\n\n.photo-gallery h2 {\n  font-weight: bold;\n  margin-bottom: 40px;\n  padding-top: 40px;\n  color: inherit;\n}\n\n@media (max-width:767px) {\n  .photo-gallery h2 {\n    margin-bottom: 25px;\n    padding-top: 25px;\n    font-size: 24px;\n  }\n}\n\n.photo-gallery .intro {\n  font-size: 16px;\n  max-width: 500px;\n  margin: 0 auto 40px;\n}\n\n.photo-gallery .intro p {\n  margin-bottom: 0;\n}\n\n.photo-gallery .photos {\n  padding-bottom: 20px;\n}\n\n.photo-gallery .item {\n  padding-bottom: 30px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91aS9pbWFnZS1nYWxsZXJ5L2ltYWdlLWdhbGxlcnkuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7RUFDZCxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsY0FBYztBQUNoQjs7QUFFQTtFQUNFO0lBQ0UsbUJBQW1CO0lBQ25CLGlCQUFpQjtJQUNqQixlQUFlO0VBQ2pCO0FBQ0Y7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdWkvaW1hZ2UtZ2FsbGVyeS9pbWFnZS1nYWxsZXJ5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGhvdG8tZ2FsbGVyeSB7XG4gIGNvbG9yOiAjMzEzNDM3O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xufVxuXG4ucGhvdG8tZ2FsbGVyeSBwIHtcbiAgY29sb3I6ICM3ZDgyODU7XG59XG5cbi5waG90by1nYWxsZXJ5IGgyIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIG1hcmdpbi1ib3R0b206IDQwcHg7XG4gIHBhZGRpbmctdG9wOiA0MHB4O1xuICBjb2xvcjogaW5oZXJpdDtcbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6NzY3cHgpIHtcbiAgLnBob3RvLWdhbGxlcnkgaDIge1xuICAgIG1hcmdpbi1ib3R0b206IDI1cHg7XG4gICAgcGFkZGluZy10b3A6IDI1cHg7XG4gICAgZm9udC1zaXplOiAyNHB4O1xuICB9XG59XG5cbi5waG90by1nYWxsZXJ5IC5pbnRybyB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWF4LXdpZHRoOiA1MDBweDtcbiAgbWFyZ2luOiAwIGF1dG8gNDBweDtcbn1cblxuLnBob3RvLWdhbGxlcnkgLmludHJvIHAge1xuICBtYXJnaW4tYm90dG9tOiAwO1xufVxuXG4ucGhvdG8tZ2FsbGVyeSAucGhvdG9zIHtcbiAgcGFkZGluZy1ib3R0b206IDIwcHg7XG59XG5cbi5waG90by1nYWxsZXJ5IC5pdGVtIHtcbiAgcGFkZGluZy1ib3R0b206IDMwcHg7XG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/components/ui/image-gallery/image-gallery.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/components/ui/image-gallery/image-gallery.component.ts ***!
+  \************************************************************************/
+/*! exports provided: ImageGalleryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageGalleryComponent", function() { return ImageGalleryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_service_image_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/service/image.service */ "./src/app/service/image.service.ts");
+
+
+
+var ImageGalleryComponent = /** @class */ (function () {
+    function ImageGalleryComponent(imageService) {
+        this.imageService = imageService;
+    }
+    ImageGalleryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.imageService.getImages(0, 10).subscribe(function (res) {
+            if (res.ok) {
+                _this.imageList = res.json().content;
+                console.log(_this.imageList);
+            }
+        }, function (error) { return console.error(error); });
+    };
+    ImageGalleryComponent.ctorParameters = function () { return [
+        { type: src_app_service_image_service__WEBPACK_IMPORTED_MODULE_2__["ImageService"] }
+    ]; };
+    ImageGalleryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-image-gallery',
+            template: __webpack_require__(/*! raw-loader!./image-gallery.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/ui/image-gallery/image-gallery.component.html"),
+            styles: [__webpack_require__(/*! ./image-gallery.component.css */ "./src/app/components/ui/image-gallery/image-gallery.component.css")]
+        })
+    ], ImageGalleryComponent);
+    return ImageGalleryComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/ui/menu-feature/menu-feature.component.css":
 /*!***********************************************************************!*\
   !*** ./src/app/components/ui/menu-feature/menu-feature.component.css ***!
@@ -1911,7 +1988,7 @@ var ReservationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdWkvdWktbWVudS91aS1tZW51LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ".food-description {\n\twidth: 100%;\n\tmargin: auto;\n\tpadding: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91aS91aS1tZW51L3VpLW1lbnUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFdBQVc7Q0FDWCxZQUFZO0NBQ1osVUFBVTtBQUNYIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy91aS91aS1tZW51L3VpLW1lbnUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb29kLWRlc2NyaXB0aW9uIHtcblx0d2lkdGg6IDEwMCU7XG5cdG1hcmdpbjogYXV0bztcblx0cGFkZGluZzogMDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -1937,9 +2014,13 @@ var UiMenuComponent = /** @class */ (function () {
     }
     UiMenuComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.menuService.getMenu(0, 10).subscribe(function (res) {
+        this.menuService.getMenu(0, 50).subscribe(function (res) {
             if (res.ok) {
                 _this.menuList = res.json().content;
+                _this.breakfastList = _this.menuList.filter(function (menu) { return menu.breakFast === true; });
+                _this.saladsList = _this.menuList.filter(function (menu) { return menu.salad === true; });
+                _this.pastaList = _this.menuList.filter(function (menu) { return menu.pasta === true; });
+                _this.burgersList = _this.menuList.filter(function (menu) { return menu.burger === true; });
             }
         }, function (error) { return console.error(error); });
     };
@@ -2046,8 +2127,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _shared_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/url */ "./src/app/shared/url.ts");
-
 
 
 
@@ -2055,7 +2134,7 @@ var AddMenuService = /** @class */ (function () {
     // tslint:disable-next-line: deprecation
     function AddMenuService(http) {
         this.http = http;
-        this.url = new _shared_url__WEBPACK_IMPORTED_MODULE_3__["RemoteURL"]().url + '/menu';
+        this.url = '/api/menu';
         // tslint:disable-next-line: deprecation
         this.headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
             'Content-Type': 'application/json'
@@ -2063,7 +2142,6 @@ var AddMenuService = /** @class */ (function () {
     }
     AddMenuService.prototype.addMenu = function (menu) {
         this.headers.append('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
-        console.log(this.headers);
         return this.http.post(this.url, JSON.stringify(menu), { headers: this.headers });
     };
     AddMenuService.ctorParameters = function () { return [
@@ -2081,7 +2159,7 @@ var GetMenuListService = /** @class */ (function () {
     // tslint:disable-next-line: deprecation
     function GetMenuListService(http) {
         this.http = http;
-        this.url = new _shared_url__WEBPACK_IMPORTED_MODULE_3__["RemoteURL"]().url + '/menu';
+        this.url = '/api/menu';
         // tslint:disable-next-line: deprecation
         this.headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
             'Content-Type': 'application/json'
@@ -2140,7 +2218,7 @@ var CateringService = /** @class */ (function () {
     // tslint:disable-next-line: deprecation
     function CateringService(http) {
         this.http = http;
-        this.url = 'http://localhost:8080/catering';
+        this.url = '/api/catering';
         // tslint:disable-next-line: deprecation
         this.headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
             'Content-Type': 'application/json',
@@ -2207,7 +2285,7 @@ var ImageService = /** @class */ (function () {
     // tslint:disable-next-line: deprecation
     function ImageService(http) {
         this.http = http;
-        this.url = 'http://localhost:8080/images';
+        this.url = '/api/images';
         // tslint:disable-next-line: deprecation
         this.headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({});
     }
@@ -2259,8 +2337,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _shared_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/url */ "./src/app/shared/url.ts");
-
 
 
 
@@ -2268,7 +2344,7 @@ var LoginService = /** @class */ (function () {
     // tslint:disable-next-line: deprecation
     function LoginService(http) {
         this.http = http;
-        this.baseUrl = new _shared_url__WEBPACK_IMPORTED_MODULE_3__["RemoteURL"]().url;
+        this.baseUrl = '/api';
         // tslint:disable-next-line: deprecation
         this.headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
             'Content-Type': 'application/json'
@@ -2311,6 +2387,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _shared_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/url */ "./src/app/shared/url.ts");
+
 
 
 
@@ -2318,7 +2396,7 @@ var TagService = /** @class */ (function () {
     // tslint:disable-next-line: deprecation
     function TagService(http) {
         this.http = http;
-        this.url = 'http://localhost:8080/tag';
+        this.url = new _shared_url__WEBPACK_IMPORTED_MODULE_3__["RemoteURL"]().url + '/tag';
         // tslint:disable-next-line: deprecation
         this.headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
             'Content-Type': 'application/json',
@@ -2437,7 +2515,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: true
+    production: false
 };
 /*
  * For easier debugging in development mode, you can import the following file

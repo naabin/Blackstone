@@ -1,0 +1,20 @@
+<div class="jumbotron header-jumbotron-display" style="height: 250px;"
+    [ngStyle]="{'background-image': 'url(../../../../../../assets/gallery-header-image.jpg)' }">
+    <h1 class="text-center jumbotron-header" style="font-family: Poppins, sans-serif;color: rgb(246,247,248);">Gallery
+    </h1>
+    <p></p>
+</div>
+<div class="container">
+    <div class="intro">
+        <h2 class="text-center" style="font-family: Poppins, sans-serif;">Blackstone Gallery</h2>
+        <p class="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, omnis? Debitis illum veniam doloremque assumenda voluptatum ad beatae, pariatur vero voluptas nulla fugiat facilis, architecto deleniti ex rem. Tempora, enim!
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

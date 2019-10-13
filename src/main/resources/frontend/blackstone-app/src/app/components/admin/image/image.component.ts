@@ -16,10 +16,11 @@ export class ImageComponent implements OnInit {
   images: [];
 
   public loading = false;
+  public deleteLoading = false;
 
   public imageForm: FormGroup;
 
-  constructor(private imageService: ImageService, private router: Router) {
+  constructor(private imageService: ImageService) {
     this.imageForm = this.imageFormValidator();
   }
 
@@ -39,6 +40,7 @@ export class ImageComponent implements OnInit {
     this.loading = true;
     this.imageService.postImage(file, this.imageName).subscribe(() => {
       this.loading = false;
+      location.reload();
       console.log('Image saved');
     }, (error) => {
       console.error(error);
@@ -46,12 +48,12 @@ export class ImageComponent implements OnInit {
   }
 
   deleteImage(id: number) {
-    this.loading = true;
+    this.deleteLoading = true;
     this.imageService.deleteImageById(id).subscribe((res) => {
       if (res.ok) {
         this.loading = false;
-        this.imageService.getImages(0, 10).subscribe((res) => {
-          if (res.ok) {
+        this.imageService.getImages(0, 10).subscribe((response) => {
+          if (response.ok) {
             this.images = res.json().content;
           }
         });

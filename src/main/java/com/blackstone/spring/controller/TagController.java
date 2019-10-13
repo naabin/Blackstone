@@ -19,7 +19,7 @@ import com.blackstone.spring.model.Tag;
 import com.blackstone.spring.service.GeneralService;
 
 @RestController
-@RequestMapping("/tag")
+@RequestMapping("/api/tag")
 public class TagController {
 
 	@Autowired

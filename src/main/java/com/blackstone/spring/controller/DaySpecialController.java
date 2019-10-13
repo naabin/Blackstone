@@ -19,7 +19,7 @@ import com.blackstone.spring.model.DaySpecial;
 import com.blackstone.spring.service.GeneralService;
 
 @RestController
-@RequestMapping("/special")
+@RequestMapping("/api/special")
 public class DaySpecialController {
 	
 	@Autowired

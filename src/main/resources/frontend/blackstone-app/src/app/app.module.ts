@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { routing } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxGalleryModule } from 'ngx-gallery';
 import { LoginService } from './service/login.service';
 import { AddMenuService } from './service/add-menu.service';
 import { DatePipe } from '@angular/common';
@@ -33,6 +34,8 @@ import { ReservationComponent } from './components/ui/reservation/reservation.co
 import { MenuFeatureComponent } from './components/ui/menu-feature/menu-feature.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
+import { ImageGalleryComponent } from './components/ui/image-gallery/image-gallery.component';
+
 
 
 
@@ -59,6 +62,7 @@ import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
     MenuFeatureComponent,
     FooterComponent,
     UiMenuComponent,
+    ImageGalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +74,8 @@ import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
     // tslint:disable-next-line: deprecation
     HttpModule,
     AppRoutingModule,
+    NgxGalleryModule
+
   ],
   providers: [
     LoginService,

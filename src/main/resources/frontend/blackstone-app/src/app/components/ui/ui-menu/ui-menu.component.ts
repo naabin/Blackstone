@@ -10,17 +10,24 @@ import { Menu } from 'src/models/menu';
 export class UiMenuComponent implements OnInit {
 
   public menuList: Menu[];
+  public burgersList: Menu[];
+  public saladsList: Menu[];
+  public pastaList: Menu[];
+  public breakfastList: Menu[];
 
   constructor(private menuService: GetMenuListService) { }
 
 
   ngOnInit() {
 
-    this.menuService.getMenu(0, 10).subscribe((res) => {
+    this.menuService.getMenu(0, 50).subscribe((res) => {
       if (res.ok) {
 
         this.menuList = res.json().content;
-
+        this.breakfastList = this.menuList.filter(menu => menu.breakFast === true);
+        this.saladsList = this.menuList.filter(menu => menu.salad === true);
+        this.pastaList = this.menuList.filter(menu => menu.pasta === true);
+        this.burgersList = this.menuList.filter(menu => menu.burger === true);
       }
     }, error => console.error(error));
   }

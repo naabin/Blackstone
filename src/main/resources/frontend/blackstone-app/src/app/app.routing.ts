@@ -13,6 +13,7 @@ import { TaggedCateringListComponent } from './components/admin/catering/tagged-
 import { ImageComponent } from './components/admin/image/image.component';
 import { HomeComponent } from './components/ui/home/home.component';
 import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
+import { ImageGalleryComponent } from './components/ui/image-gallery/image-gallery.component';
 
 
 
@@ -87,6 +88,10 @@ const appRoutes: Routes = [
     {
         path: 'our-menu',
         component: UiMenuComponent
+    },
+    {
+        path: 'gallery',
+        component: ImageGalleryComponent
     }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

@@ -40,7 +40,7 @@ import {
         MatCheckboxModule,
         MatPaginatorModule,
         MatSelectModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
     ],
     exports: [
         MatButtonModule,

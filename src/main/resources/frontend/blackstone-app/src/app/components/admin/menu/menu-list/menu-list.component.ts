@@ -19,6 +19,7 @@ export class MenuListComponent implements OnInit {
   public menuId = 0;
   public idSelected = false;
   public selectedMenu: Menu;
+  public pageNum = 0;
   constructor(private getMenuListService: GetMenuListService, private sharedService: SharedService) { }
 
   convertDate(date: Date): string {
@@ -32,7 +33,7 @@ export class MenuListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getMenuListService.getMenu(0, 10).subscribe((res) => {
+    this.getMenuListService.getMenu(0, 50).subscribe((res) => {
       if (res.ok) {
         console.log(res.json());
         this.menuList = res.json().content;

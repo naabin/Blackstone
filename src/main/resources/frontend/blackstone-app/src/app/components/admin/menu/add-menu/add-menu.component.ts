@@ -39,6 +39,7 @@ export class AddMenuComponent implements OnInit {
         this.menuAdded = true;
         this.menu = new Menu();
         this.menu.createdOn = new Date();
+        location.reload();
         this.router.navigate(['/menu']);
       }, error => {
         console.log(error);

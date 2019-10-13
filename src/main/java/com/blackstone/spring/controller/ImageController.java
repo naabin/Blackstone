@@ -24,7 +24,7 @@ import com.blackstone.spring.model.Image;
 import com.blackstone.spring.service.ImageService;
 
 @RestController
-@RequestMapping("/images")
+@RequestMapping("/api/images")
 public class ImageController {
 	
 	@Autowired

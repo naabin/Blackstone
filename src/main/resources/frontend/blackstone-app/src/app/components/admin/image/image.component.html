@@ -37,7 +37,7 @@
                 <mat-card-actions>
                     <button [hidden]="loading" (click)="deleteImage(image.id)" mat-raised-button
                         class="mat-warn deleteButton">Delete</button>
-                    <button [hidden] ="!loading" class="btn btn-primary" type="button" disabled>
+                    <button [hidden] ="!deleteLoading " class="btn btn-primary" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         <span class="sr-only">Loading...</span>
                     </button>
