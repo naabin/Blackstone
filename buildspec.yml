@@ -9,8 +9,8 @@ phases:
     commands:
       - pwd
       - pushd src/main/resources/frontend/blackstone-app && npm install && npm install -g @angular/cli && popd
-      - mvn clean install
-      - mvn clean package
+      - mvn install
+      - mvn package
 artifacts:
   files:
     - target/*.jar
