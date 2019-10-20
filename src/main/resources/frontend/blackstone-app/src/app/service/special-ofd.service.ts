@@ -10,7 +10,7 @@ export class SpeciailOfdService {
   // tslint:disable-next-line: deprecation
   constructor(private http: Http) { }
 
-  private url = 'http://localhost:8080/special';
+  private url = '/api/special';
 
   // tslint:disable-next-line: deprecation
   private headers = new Headers({

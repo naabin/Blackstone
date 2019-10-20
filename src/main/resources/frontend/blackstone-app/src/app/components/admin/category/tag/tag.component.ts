@@ -32,6 +32,7 @@ export class TagComponent implements OnInit {
     this.tagService.postTags(this.tag).subscribe((res) => {
       if (res.ok) {
         this.tag = new Tag();
+        location.reload();
       }
     }, error => {
       console.error(error);

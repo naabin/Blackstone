@@ -100,7 +100,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
-					<version>1.6.0</version>
+					<version>1.6.0</version><!--$NO-MVN-MAN-VER$-->
 					<executions>
 						<execution>
 							<phase>validate</phase>
@@ -114,6 +114,7 @@
 						<workingDirectory>src/main/resources/frontend/blackstone-app</workingDirectory>
 						<arguments>
 							<argument>build</argument>
+							<argument> --prod</argument>
 						</arguments>
 					</configuration>
 				</plugin>

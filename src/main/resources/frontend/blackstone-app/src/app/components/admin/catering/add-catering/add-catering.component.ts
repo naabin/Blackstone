@@ -52,6 +52,7 @@ export class AddCateringComponent implements OnInit {
       this.cateringService.addCatering(this.catering).subscribe((res) => {
         if (res.ok) {
           this.cateringAdded = true;
+          location.reload();
           this.router.navigate(['/catering']);
         }
       }, error => {

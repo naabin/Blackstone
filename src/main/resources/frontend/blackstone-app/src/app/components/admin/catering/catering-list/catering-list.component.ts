@@ -17,12 +17,12 @@ export class CateringListComponent implements OnInit {
   constructor(
     private cateringService: CateringService) { }
 
+
   ngOnInit() {
     this.cateringService.getCatering(0, 10).subscribe((res) => {
       if (res.ok) {
         this.cateringList = res.json().content;
         this.dataSource = new MatTableDataSource<Catering>(this.cateringList);
-        this.dataSource.paginator = this.paginator;
       }
     }, error => {
       console.error(error);

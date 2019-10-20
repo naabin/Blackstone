@@ -1,5 +1,5 @@
 <mat-toolbar [hidden]="!isLoggedIn" color="primary">
-        <h3 [ngStyle]="{color: white}">Blackstone</h3>
+        <h3>Blackstone</h3>
         <span class="example-spacer"></span>
         <span [hidden]="!isLoggedIn" [routerLink]="['/image']" routerLinkActive="router-link-active"><a
                         mat-button>Gallery</a></span>
@@ -23,25 +23,21 @@
                         <div class="navbar-collapse collapse" id="navcol-1">
                                 <ul class="nav navbar-nav ml-auto">
                                         <li class="nav-item" role="presentation">
-                                                <a class="nav-link" style="font-size: 20px;" href="#">About</a>
+                                                <a class="nav-link" style="font-size: 20px;"
+                                                        [routerLink]="['/our-menu']"
+                                                        routerLinkActive="router-link-active">Our Menu</a>
                                         </li>
-                                        <li class="nav-item" role="presentation"><a class="nav-link" href="#"
-                                                        style="font-size: 20px;">Reservation</a></li>
+                                        <li class="nav-item" role="presentation">
+                                                <a style="font-size: 20px" class="dropdown-item" role="presentation" [routerLink]="['/gallery']"
+                                                        routerLinkActive="router-link-active">Gallery</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                                <a href="#" style="font-size: 20px;">Catering</a>
+                                        </li>
                                         <li class="nav-item" role="presentation">
                                                 <a class="nav-link" href="#" style="font-size: 20px;">Contact us</a>
                                         </li>
-                                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link"
-                                                        data-toggle="dropdown" aria-expanded="false" href="#"
-                                                        style="font-size: 20px;">More</a>
-                                                <div class="dropdown-menu" role="menu">
-                                                        <a class="dropdown-item" role="presentation"
-                                                                [routerLink]="['/our-menu']"
-                                                                routerLinkActive="router-link-active">Our Menu</a>
-                                                        <a class="dropdown-item" role="presentation" [routerLink]="['/gallery']" routerLinkActive="router-link-active" >Gallery</a>
-                                                        <a class="dropdown-item" role="presentation"
-                                                                href="events.html">Events</a>
-                                                </div>
-                                        </li>
+
                                 </ul>
                         </div>
                 </div>
