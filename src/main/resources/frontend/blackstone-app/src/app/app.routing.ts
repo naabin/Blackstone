@@ -14,6 +14,8 @@ import { ImageComponent } from './components/admin/image/image.component';
 import { HomeComponent } from './components/ui/home/home.component';
 import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
 import { ImageGalleryComponent } from './components/ui/image-gallery/image-gallery.component';
+import { ContactComponent } from './components/ui/contact/contact.component';
+import { CateringComponent } from './components/ui/catering/catering.component';
 
 
 
@@ -58,11 +60,11 @@ const appRoutes: Routes = [
         component: AddCateringComponent
     },
     {
-        path: 'catering',
+        path: 'admin-catering',
         component: CateringListComponent
     },
     {
-        path: 'catering/:id',
+        path: 'admin-catering/:id',
         component: CateringItemComponent
     },
     {
@@ -92,6 +94,14 @@ const appRoutes: Routes = [
     {
         path: 'gallery',
         component: ImageGalleryComponent
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
+    },
+    {
+        path: 'catering',
+        component: CateringComponent
     }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

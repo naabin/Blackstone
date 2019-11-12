@@ -7,7 +7,7 @@
                         mat-button>Menu</a></span>
         <span [hidden]="!isLoggedIn" [routerLink]="['/category-list']" routerLinkActive="router-link-active"><a
                         mat-button>Category</a></span>
-        <span [hidden]="!isLoggedIn"><a mat-button [routerLink]="['/catering']"
+        <span [hidden]="!isLoggedIn"><a mat-button [routerLink]="['/admin-catering']"
                         routerLinkActive="router-link-active">Catering</a></span>
         <span [hidden]="!isLoggedIn"><a mat-button (click)="logout()">Logout</a></span>
 </mat-toolbar>
@@ -32,10 +32,10 @@
                                                         routerLinkActive="router-link-active">Gallery</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                                <a href="#" style="font-size: 20px;">Catering</a>
+                                                <a [routerLink]="['/catering']" routerLinkActive="router-link-active"  style="font-size: 20px;">Catering</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                                <a class="nav-link" href="#" style="font-size: 20px;">Contact us</a>
+                                                <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active"  style="font-size: 20px;">Contact us</a>
                                         </li>
 
                                 </ul>

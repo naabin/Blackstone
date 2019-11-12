@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  public show = false;
   constructor() { }
 
+  onClick() {
+    this.show = !this.show;
+  }
   ngOnInit() {
   }
 

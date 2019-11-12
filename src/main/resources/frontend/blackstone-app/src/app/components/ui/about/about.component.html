@@ -4,10 +4,27 @@
             <h1 class="text-center home-grid-heading" style="font-family: Courgette, cursive;color: rgb(238,12,26);">
                 Blackstone Cafe</h1>
             <h1 class="text-center" style="font-family: Poppins, sans-serif;">Welcome</h1>
-            <p class="text-center"><br>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                in a piece of classical Latin literature from 45 BC,&nbsp;<br><br></p>
-            <p class="text-center"><button class="btn btn-secondary btn-sm" type="button">More About us</button></p>
+            <p>Blackstone Cafe Café is Canberra’s newest dining establishment.The café design is
+                intimately acquainted with the concept of the building.
+                Blackstone Cafe provides for all your dining requirements. Open early from 7am for breakfast or
+                coffee.</p>
+            <p [hidden]="!show">
+                Lunch at Blackstone Cafe is whatever you choose it to be: whether it is a healthy, tasty takeaway meal
+                or a gourmet lunch accompanied with your favourite wine or beer.
+                Either way, Blackstone Cafe’s commitment is to provide quality food and excellent customer service in a
+                relaxed and friendly ambience.
+
+                Blackstone Cafe also offers an extensive and flexible catering menu. We are able to provide food of
+                the finest quality and presentation delivered to your location. We know that your time is valued, so why
+                not order online.
+                Functions are also a feature at Blackstone Cafe Café. Whatever your function style or theme we are happy
+                to tailor a package to suit your needs
+            </p>
+            <p class="text-center"><button [hidden]="show" (click)="onClick()" class="btn btn-secondary btn-sm" type="button">More About
+                    us</button></p>
+
         </div>
+
         <div class="col-md-6"><img class="rounded img-fluid" style="height: 402px;margin: 0px;margin-top: 70px;"
                 src="../../../../assets/bcicon.png" width="400px" height="60vh"></div>
     </div>

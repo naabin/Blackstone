@@ -35,6 +35,8 @@ import { MenuFeatureComponent } from './components/ui/menu-feature/menu-feature.
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
 import { ImageGalleryComponent } from './components/ui/image-gallery/image-gallery.component';
+import { ContactComponent } from './components/ui/contact/contact.component';
+import { CateringComponent } from './components/ui/catering/catering.component';
 
 
 
@@ -63,6 +65,8 @@ import { ImageGalleryComponent } from './components/ui/image-gallery/image-galle
     FooterComponent,
     UiMenuComponent,
     ImageGalleryComponent,
+    ContactComponent,
+    CateringComponent
   ],
   imports: [
     BrowserModule,

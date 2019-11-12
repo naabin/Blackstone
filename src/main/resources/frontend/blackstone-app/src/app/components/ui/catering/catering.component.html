@@ -1,0 +1,33 @@
+<div class="jumbotron header-jumbotron-display" style="height: 250px;">
+    <h1 class="text-center jumbotron-header" style="font-family: Poppins, sans-serif;color: rgb(246,247,248);">Catering &amp; Events</h1>
+    <p></p>
+</div>
+
+<div>
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let tag of tags" (opened)="showMenu(tag.name)" (closed)="panelOpenState=false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{tag.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>{{tag.name}}</th>
+                        <th>Minimun No.</th>
+                        <th>Price per Person</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let menu of cateringMenu">
+                        <td> {{menu.name}}
+                            <p>{{menu.description}}</p>
+                        </td>
+                        <td>{{menu.minimumNo}}</td>
+                        <td>{{menu.pricePerPerson | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<app-footer></app-footer>

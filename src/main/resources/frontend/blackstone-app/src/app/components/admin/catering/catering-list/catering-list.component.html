@@ -5,7 +5,7 @@
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width">
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef>Name</th>
-                    <td style="cursor: pointer" mat-cell *matCellDef="let catering" [routerLink]="['/catering',catering.id]" routerLinkActive="router-link-active" >{{catering.name}}</td>
+                    <td style="cursor: pointer" mat-cell *matCellDef="let catering" [routerLink]="['/admin-catering',catering.id]" routerLinkActive="router-link-active" >{{catering.name}}</td>
                 </ng-container>
                 <ng-container matColumnDef="tag">
                     <th mat-header-cell *matHeaderCellDef>Category</th>
