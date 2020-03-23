@@ -1,30 +1,33 @@
+<div class="alert alert-success text-center" role="alert">
+        <h1>COVID-19 UPDATE</h1>
+<p>{{date | date}}</p>
+        <br>
+        WE ARE OPEN FOR TAKEAWAY SERVING COFFEE, BREAKFAST AND LUNCH - TAKEAWAY ONLY.  WE WILL KEEP YOU POSTED ON ANY OTHER CHANGES BUT IN THE MEANTIME BE RESPONSIBLE, DON'T PANIC AND LET'S TAKE CARE OF EACH OTHER. 
+</div>
 <div class="container .home-section-1">
     <div class="row">
-        <div class="col-md-6" style="margin-top: 70px;">
-            <h1 class="text-center home-grid-heading" style="font-family: Courgette, cursive;color: rgb(238,12,26);">
-                Blackstone Cafe</h1>
-            <h1 class="text-center" style="font-family: Poppins, sans-serif;">Welcome</h1>
-            <p>Blackstone Cafe Café is Canberra’s newest dining establishment.
-                Blackstone Cafe provides for all your dining requirements. Open early from 7am for breakfast or
-                coffee.</p>
-            <p [hidden]="!show">
-                Lunch at Blackstone Cafe is whatever you choose it to be: whether it is a healthy, tasty takeaway meal
-                or a gourmet lunch accompanied with your favourite wine or beer.
-                Either way, Blackstone Cafe’s commitment is to provide quality food and excellent customer service in a
-                relaxed and friendly ambience.
-
-                Blackstone Cafe also offers an extensive and flexible catering menu. We are able to provide food of
-                the finest quality and presentation delivered to your location. We know that your time is valued, so why
-                not order online.
-                Functions are also a feature at Blackstone Cafe Café. Whatever your function style or theme we are happy
-                to tailor a package to suit your needs
-            </p>
-            <p class="text-center"><button [hidden]="show" (click)="onClick()" class="btn btn-secondary btn-sm" type="button">More About
-                    us</button></p>
-
+        <div class="col-md-12"><img class="p-5 mt-4" src="../../../../assets/icon.png" width="100%" height="10vh">
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center" style="font-family: Poppins, sans-serif;">About us</h1>
+                <p>Blackstone Café is a modern eatery located on the Ground Floor of the Geoscience Australia Building
+                    in Symonston.
+                    The café is open Monday to Friday from 7 am to 4 pm.
+                </p>
+                <p [hidden]="!show">
+                    Lunch at Blackstone Cafe is whatever you choose it to be: whether it is a healthy, tasty takeaway
+                    meal or a dine-in gourmet lunch, the options are varied.
+                    Blackstone Cafe’s commitment is to provide quality food and excellent customer service in a relaxed
+                    and friendly ambience. Blackstone Cafe also offers an extensive and flexible catering menu. We are
+                    able to provide food of the finest quality and presentation delivered to your location. We know that
+                    your time is valued, so why not order online.
+                </p>
+                <p class="text-center"><button [hidden]="show" (click)="onClick()" class="btn btn-secondary btn-sm"
+                        type="button">More About
+                        us</button></p>
 
-        <div class="col-md-6"><img class="rounded img-fluid" style="height: 402px;margin: 0px;margin-top: 70px;"
-                src="../../../../assets/bchome.png" width="100%" height="60vh"></div>
+            </div>
+        </div>
     </div>
 </div>

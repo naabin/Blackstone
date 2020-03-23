@@ -37,6 +37,7 @@ import { UiMenuComponent } from './components/ui/ui-menu/ui-menu.component';
 import { ImageGalleryComponent } from './components/ui/image-gallery/image-gallery.component';
 import { ContactComponent } from './components/ui/contact/contact.component';
 import { CateringComponent } from './components/ui/catering/catering.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -77,6 +78,7 @@ import { CateringComponent } from './components/ui/catering/catering.component';
     BrowserAnimationsModule,
     // tslint:disable-next-line: deprecation
     HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     NgxGalleryModule
 

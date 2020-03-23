@@ -17,6 +17,9 @@ export class CateringComponent implements OnInit {
   public cateringMenu: Catering[] = [];
 
 
+  tagLoading = true;
+  cateringLoading = true;
+
   constructor(private cateringService: CateringService, private tagService: TagService) { }
 
   showMenu = ((tag: string) => {
@@ -24,6 +27,7 @@ export class CateringComponent implements OnInit {
     console.log(tag);
     this.cateringService.getCategoryByTagName(tag).subscribe((res) => {
       if (res.ok) {
+        this.cateringLoading = false;
         this.cateringMenu = res.json();
       }
     }, error => console.error(error));
@@ -34,6 +38,7 @@ export class CateringComponent implements OnInit {
     this.tagService.getTags(0, 20).subscribe((res) => {
       if (res.ok) {
         this.tags = res.json().content;
+        this.tagLoading = false;
       }
     }, error => console.error(error));
   }

@@ -10,6 +10,8 @@ export class AboutComponent implements OnInit {
   public show = false;
   constructor() { }
 
+  date = new Date(Date.now());
+
   onClick() {
     this.show = !this.show;
   }

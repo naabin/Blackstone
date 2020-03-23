@@ -8,11 +8,16 @@
     <div class="intro">
         <h2 class="text-center" style="font-family: Poppins, sans-serif;">Blackstone Gallery</h2>
         <p class="text-center">
-            
+
         </p>
     </div>
     <div class="row">
         <div class="col-sm-12">
+            <div *ngIf="imageLoading" class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
         </div>
     </div>

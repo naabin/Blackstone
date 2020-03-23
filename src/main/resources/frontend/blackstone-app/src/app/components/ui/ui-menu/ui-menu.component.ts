@@ -15,14 +15,17 @@ export class UiMenuComponent implements OnInit {
   public pastaList: Menu[];
   public breakfastList: Menu[];
 
+  menuLoading = true;
+
   constructor(private menuService: GetMenuListService) { }
+
 
 
   ngOnInit() {
 
     this.menuService.getMenu(0, 50).subscribe((res) => {
       if (res.ok) {
-
+        this.menuLoading = false;
         this.menuList = res.json().content;
         this.breakfastList = this.menuList.filter(menu => menu.breakFast === true);
         this.saladsList = this.menuList.filter(menu => menu.salad === true);

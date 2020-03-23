@@ -26,15 +26,18 @@ export class ImageGalleryComponent implements OnInit {
       }
     });
   }
+  imageLoading = true;
 
   ngOnInit() {
 
     this.imageService.getImages(0, 10).subscribe((res) => {
       if (res.ok) {
+       
         const imageList: [] = res.json().content;
         const randomIndex = Math.round(Math.random() * (imageList.length - 1));
         this.homeImage = imageList[randomIndex];
         this.makeImage(imageList);
+        this.imageLoading = false;
       }
     }, error => console.error(error));
     this.galleryOptions = [

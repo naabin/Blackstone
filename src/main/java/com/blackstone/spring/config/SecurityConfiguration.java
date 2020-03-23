@@ -56,6 +56,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.permitAll()
 			.antMatchers(HttpMethod.OPTIONS, "/**")
 			.permitAll()
+			.antMatchers(HttpMethod.POST, "/api/contact/new")
+			.permitAll()
 			.antMatchers("/",
 					"/favicon.io",
 					"/**/*.png",

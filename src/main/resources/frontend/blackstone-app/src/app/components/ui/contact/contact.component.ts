@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from 'src/app/service/contact.service';
+
+import {first} from 'rxjs/operators'
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
+
+    this.contactService.getContacts(0, 10).pipe(first())
+      .subscribe(data => console.log(data));
+
   }
 
 }
